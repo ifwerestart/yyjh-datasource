@@ -3,17 +3,19 @@ package com.qsccc.yyjhservice.dao.auth;
 import com.qsccc.yyjhservice.domain.auth.TPermission;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface TPermissionMapper {
-    int deleteByPrimaryKey(Integer id);
+    int delTPermissionByID(Integer id);
 
-    int insert(TPermission record);
+    int addTPermission(TPermission record);
 
-    int insertSelective(TPermission record);
+    TPermission findTPermissionById(Integer id);
 
-    TPermission selectByPrimaryKey(Integer id);
+    int updTPermissionById(TPermission record);
 
-    int updateByPrimaryKeySelective(TPermission record);
+    List<TPermission> getAll();
 
-    int updateByPrimaryKey(TPermission record);
+
 }

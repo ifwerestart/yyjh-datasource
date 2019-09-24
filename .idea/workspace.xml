@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e8b49d5-6cb9-4c23-8e13-aac72a0e6544" name="Default Changelist" comment="" />
+    <list default="true" id="5e8b49d5-6cb9-4c23-8e13-aac72a0e6544" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/springbootdemo.log" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/springbootdemo.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TPermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TPermissionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TRoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TRolePermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TRolePermissionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TUserRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TUserRoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/datasource/TDataSourceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/datasource/TDataSourceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/user/TUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/user/TUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TPermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TPermissionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TRoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TRolePermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TRolePermissionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TUserRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TUserRoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/datasource/TDataSourceMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/datasource/TDataSourceMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/user/TUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/user/TUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyjh-service/src/test/java/com/qsccc/yyjhservice/YyjhServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/yyjh-service/src/test/java/com/qsccc/yyjhservice/YyjhServiceApplicationTests.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/yyjh-service/target/" />
+    <ignored path="$PROJECT_DIR$/common/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,84 +38,131 @@
     <session id="-1310983269">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.closed" value="14" />
+          <entry key="project.open.time.0" value="4" />
+          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.12" value="3" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="213" />
+          <entry key="dummy" value="3" />
+          <entry key="html" value="919" />
+          <entry key="java" value="6232" />
+          <entry key="js" value="6548" />
           <entry key="properties" value="231" />
-          <entry key="xml" value="137" />
-          <entry key="yml" value="32" />
+          <entry key="xml" value="285" />
+          <entry key="yml" value="188" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="213" />
+          <entry key="HTML" value="919" />
+          <entry key="JAVA" value="6232" />
+          <entry key="JavaScript" value="6547" />
+          <entry key="PLAIN_TEXT" value="3" />
           <entry key="Properties" value="231" />
-          <entry key="XML" value="137" />
-          <entry key="YAML" value="32" />
+          <entry key="RegExp" value="1" />
+          <entry key="SQL" value="1" />
+          <entry key="XML" value="284" />
+          <entry key="YAML" value="188" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="36" />
+          <entry key="html" value="7" />
+          <entry key="java" value="97" />
+          <entry key="js" value="4" />
           <entry key="properties" value="3" />
           <entry key="txt" value="1" />
-          <entry key="xml" value="13" />
-          <entry key="yml" value="2" />
+          <entry key="xml" value="36" />
+          <entry key="yml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="36" />
+          <entry key="HTML" value="7" />
+          <entry key="JAVA" value="97" />
+          <entry key="JavaScript" value="4" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="3" />
-          <entry key="XML" value="13" />
-          <entry key="YAML" value="2" />
+          <entry key="XML" value="36" />
+          <entry key="YAML" value="9" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yyjh-service/src/test/java/com/qsccc/yyjhservice/YyjhServiceApplicationTests.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/static/js/datasource.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="132">
+              <caret line="682" column="30" lean-forward="true" selection-start-line="682" selection-start-column="3" selection-end-line="682" selection-end-column="30" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#624#625#0" expanded="true" />
-                <element signature="e#645#646#0" expanded="true" />
+                <element signature="n#!!block;n#init_csv_datas#0" />
+                <element signature="n#!!block;n#csv_load#0" />
+                <element signature="e#128#134#0" expanded="true" />
+                <element signature="e#134#140#0" expanded="true" />
+                <element signature="e#140#146#0" expanded="true" />
+                <element signature="e#146#152#0" expanded="true" />
+                <element signature="e#133#139#0" expanded="true" />
+                <element signature="e#139#145#0" expanded="true" />
+                <element signature="e#145#151#0" expanded="true" />
+                <element signature="e#6626#7417#0" />
+                <element signature="e#7461#7499#0" />
+                <element signature="n#!!block;n#excel_url#0" />
+                <element signature="n#!!block;n#csv_url#0" />
+                <element signature="n#!!block;n#create_csv_btngroup#0" />
+                <element signature="n#!!block;n#create_excel_btngroup#0" />
+                <element signature="n#!!block;n#create_csv_table#0" />
+                <element signature="n#!!block;n#create_excel_table#0" />
+                <element signature="n#!!block;n#init_csv_table#0" />
+                <element signature="n#!!block;n#init_excel_table#0" />
+                <element signature="n#!!block;n#open_config#0" />
+                <element signature="e#17080#17360#0" />
+                <element signature="n#!!block;n#ex_interpret_submit#0" />
+                <element signature="e#20228#20271#0" />
+                <element signature="e#20555#20838#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TPermissionMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="2" column="53" lean-forward="true" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yyjh-service/pom.xml">
+        <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/static/pages/datasource/datasource.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
+            <state relative-caret-position="264">
+              <caret line="324" lean-forward="true" selection-start-line="324" selection-end-line="324" />
+              <folding>
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="Enum" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -101,15 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/config/jedis/JedisUtil.java" />
-        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/config/shiro/MyShiroRealm.java" />
-        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/config/shiro/ShiroConfiguration.java" />
-        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/config/jedis/JedisConfig.java" />
-        <option value="$PROJECT_DIR$/yyjh-service/src/test/mybatis/generator/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/TDataSource.java" />
-        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/TPermission.java" />
         <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/TRole.java" />
         <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/TRolePermission.java" />
         <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/TUser.java" />
@@ -122,14 +183,45 @@
         <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/datasource/TDataSource.java" />
         <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/user/TUser.java" />
         <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/YyjhServiceApplication.java" />
-        <option value="$PROJECT_DIR$/yyjh-service/pom.xml" />
-        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TPermissionMapper.java" />
-        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TRoleMapper.java" />
-        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TRolePermissionMapper.java" />
-        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TUserRoleMapper.java" />
+        <option value="$PROJECT_DIR$/common/src/test/java/com/qsccc/tools/YYJHToolsTest.java" />
         <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/datasource/TDataSourceMapper.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/test/java/com/qsccc/yyjhservice/dao/datasource/TDataSourceMapperTest.java" />
         <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/user/TUserMapper.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/user/TUserMapper.xml" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/service/datasource/TDataSourceService.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/service/datasource/TDataSourceServiceImpl.java" />
         <option value="$PROJECT_DIR$/yyjh-service/src/test/java/com/qsccc/yyjhservice/YyjhServiceApplicationTests.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/test/java/com/qsccc/yyjhservice/service/datasource/TDataSourceServiceTest.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TPermissionMapper.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TPermissionMapper.xml" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TRoleMapper.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TRoleMapper.xml" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TRolePermissionMapper.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TRolePermissionMapper.xml" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/vo/ControllerResult.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TUserRoleMapper.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TUserRoleMapper.xml" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/enumeration/DataSourceEnum.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/qsccc/common/CommonApplication.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/qsccc/tools/YYJHTools.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/pom.xml" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/static/csv.html" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/static/page/csv.html" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/controller/TestController.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/static/pages/csv.html" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/static/pages/datasource.html" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/controller/RouterController.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/controller/DataSourceController.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/common/pom.xml" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/qsccc/tools/ExcelOper1.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/qsccc/tools/ExcelOper.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/controller/CSVSourceController.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/datasource/TDataSourceMapper.xml" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/controller/ExcelSourceController.java" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/static/pages/datasource/datasource.html" />
+        <option value="$PROJECT_DIR$/yyjh-service/src/main/resources/static/js/datasource.js" />
       </list>
     </option>
   </component>
@@ -143,6 +235,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="D:/maven/apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.5.0\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -153,31 +246,15 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="yyjh-service" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="yyjh-service" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="yyjh-service" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-          <item name="mybatis-generator" type="36feed69:MavenProjectsStructure$PluginNode" />
-        </path>
-      </expand>
+      <expand />
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="46" />
-    <option name="y" value="125" />
-    <option name="width" value="1630" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-108" />
+    <option name="y" value="172" />
+    <option name="width" value="1937" />
+    <option name="height" value="974" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -189,6 +266,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -262,134 +340,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="qsccc" type="462c0819:PsiDirectoryNode" />
               <item name="yyjhservice" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="qsccc" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjhservice" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="jedis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="qsccc" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjhservice" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="qsccc" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjhservice" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="qsccc" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjhservice" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="datasource" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="qsccc" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjhservice" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="qsccc" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjhservice" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="qsccc" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjhservice" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="qsccc" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjhservice" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="datasource" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="qsccc" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjhservice" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="qsccc" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjhservice" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
@@ -407,16 +358,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
@@ -435,61 +376,48 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
               <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
               <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
               <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
               <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
               <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
               <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
               <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
               <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="qsccc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="qsccc" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjhservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yyjh-datasource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yyjh-datasource" type="462c0819:PsiDirectoryNode" />
-              <item name="yyjh-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="datasource" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -497,31 +425,47 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568174085317" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568885661888" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="D:/Git/Git/bin/git.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.qsccc.yyjhservice.service.datasource" />
+      <recent name="com.qsccc.yyjhservice.dao.datasource" />
+      <recent name="com.qsccc.tools" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IntelliJ IDEA2018\workspace\yyjh-datasource\yyjh-service\src\main\resources\static\page" />
       <recent name="D:\IntelliJ IDEA2018\workspace\yyjh-datasource\yyjh-service\src\main\resources\mybatis\user" />
       <recent name="D:\IntelliJ IDEA2018\workspace\yyjh-datasource\yyjh-service\src\main\resources\mybatis\auth" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IntelliJ IDEA2018\workspace\yyjh-datasource\yyjh-service\src\main\resources\static\js" />
+      <recent name="D:\IntelliJ IDEA2018\workspace\yyjh-datasource\yyjh-service\src\main\resources" />
       <recent name="D:\IntelliJ IDEA2018\workspace\yyjh-datasource\yyjh-service\src\main\java\com\qsccc\yyjhservice\service" />
       <recent name="D:\IntelliJ IDEA2018\workspace\yyjh-datasource\yyjh-service\src\test" />
       <recent name="D:\IntelliJ IDEA2018\workspace\yyjh-datasource\yyjh-service\src\main\java\com\qsccc\yyjhservice" />
-      <recent name="D:\IntelliJ IDEA2018\workspace\yyjh-datasource\yyjh-service\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -536,17 +480,87 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.YyjhServiceApplicationTests">
-    <configuration name="YyjhServiceApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="yyjh-service" />
+  <component name="RunManager" selected="Spring Boot.YyjhServiceApplication">
+    <configuration name="ExcelOper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.qsccc.tools.ExcelOper" />
+      <module name="common" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.qsccc.yyjhservice.*" />
+          <option name="PATTERN" value="com.qsccc.tools.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.qsccc.yyjhservice" />
-      <option name="MAIN_CLASS_NAME" value="com.qsccc.yyjhservice.YyjhServiceApplicationTests" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TDataSourceServiceTest.delTDatasourceById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="yyjh-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qsccc.yyjhservice.service.datasource.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qsccc.yyjhservice.service.datasource" />
+      <option name="MAIN_CLASS_NAME" value="com.qsccc.yyjhservice.service.datasource.TDataSourceServiceTest" />
+      <option name="METHOD_NAME" value="delTDatasourceById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TDataSourceServiceTest.findTDatasourceById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="yyjh-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qsccc.yyjhservice.service.datasource.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qsccc.yyjhservice.service.datasource" />
+      <option name="MAIN_CLASS_NAME" value="com.qsccc.yyjhservice.service.datasource.TDataSourceServiceTest" />
+      <option name="METHOD_NAME" value="findTDatasourceById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TDataSourceServiceTest.getAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="yyjh-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qsccc.yyjhservice.service.datasource.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qsccc.yyjhservice.service.datasource" />
+      <option name="MAIN_CLASS_NAME" value="com.qsccc.yyjhservice.service.datasource.TDataSourceServiceTest" />
+      <option name="METHOD_NAME" value="getAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TDataSourceServiceTest.updTDatasurceById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="yyjh-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qsccc.yyjhservice.service.datasource.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qsccc.yyjhservice.service.datasource" />
+      <option name="MAIN_CLASS_NAME" value="com.qsccc.yyjhservice.service.datasource.TDataSourceServiceTest" />
+      <option name="METHOD_NAME" value="updTDatasurceById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="common" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.qsccc.common.CommonApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -560,11 +574,20 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.YyjhServiceApplication" />
-      <item itemvalue="JUnit.YyjhServiceApplicationTests" />
+      <item itemvalue="Spring Boot.CommonApplication" />
+      <item itemvalue="JUnit.TDataSourceServiceTest.updTDatasurceById" />
+      <item itemvalue="JUnit.TDataSourceServiceTest.getAll" />
+      <item itemvalue="JUnit.TDataSourceServiceTest.findTDatasourceById" />
+      <item itemvalue="JUnit.TDataSourceServiceTest.delTDatasourceById" />
+      <item itemvalue="Application.ExcelOper" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.YyjhServiceApplicationTests" />
+        <item itemvalue="Application.ExcelOper" />
+        <item itemvalue="JUnit.TDataSourceServiceTest.delTDatasourceById" />
+        <item itemvalue="JUnit.TDataSourceServiceTest.findTDatasourceById" />
+        <item itemvalue="JUnit.TDataSourceServiceTest.getAll" />
+        <item itemvalue="JUnit.TDataSourceServiceTest.updTDatasurceById" />
       </list>
     </recent_temporary>
   </component>
@@ -580,51 +603,83 @@
       <updated>1568107770922</updated>
       <workItem from="1568107772265" duration="61000" />
       <workItem from="1568164118902" duration="779000" />
-      <workItem from="1568164906147" duration="7129000" />
+      <workItem from="1568164906147" duration="8836000" />
+      <workItem from="1568183627234" duration="387000" />
+      <workItem from="1568184016836" duration="76000" />
+      <workItem from="1568184095030" duration="15000" />
+      <workItem from="1568185688681" duration="7405000" />
+      <workItem from="1568250096904" duration="10699000" />
+      <workItem from="1568267897635" duration="10563000" />
+      <workItem from="1568595025368" duration="1266000" />
+      <workItem from="1568617916737" duration="5416000" />
+      <workItem from="1568681592619" duration="30840000" />
+      <workItem from="1568854534107" duration="13108000" />
+      <workItem from="1568941154859" duration="22511000" />
+      <workItem from="1569200494992" duration="25816000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="YyjhServiceApplicationTests - 2019.09.11 at 11h 37m 04s.xml">
-      <configuration name="YyjhServiceApplicationTests" configurationId="JUnit" />
+    <history-entry file="TDataSourceMapperTest_delTDatasourceById - 2019.09.11 at 17h 18m 29s.xml">
+      <configuration name="TDataSourceMapperTest.delTDatasourceById" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YyjhServiceApplicationTests - 2019.09.11 at 11h 48m 15s.xml">
-      <configuration name="YyjhServiceApplicationTests" configurationId="JUnit" />
+    <history-entry file="TDataSourceServiceTest_addTDatasource - 2019.09.12 at 09h 12m 50s.xml">
+      <configuration name="TDataSourceServiceTest.addTDatasource" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="YyjhServiceApplicationTests - 2019.09.11 at 11h 54m 04s.xml">
-      <configuration name="YyjhServiceApplicationTests" configurationId="JUnit" />
+    <history-entry file="TDataSourceServiceTest_addTDatasource - 2019.09.12 at 09h 13m 37s.xml">
+      <configuration name="TDataSourceServiceTest.addTDatasource" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TDataSourceServiceTest_updTDatasurceById - 2019.09.12 at 09h 14m 00s.xml">
+      <configuration name="TDataSourceServiceTest.updTDatasurceById" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TDataSourceServiceTest_getAll - 2019.09.12 at 09h 14m 22s.xml">
+      <configuration name="TDataSourceServiceTest.getAll" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TDataSourceServiceTest_findTDatasourceById - 2019.09.12 at 09h 14m 34s.xml">
+      <configuration name="TDataSourceServiceTest.findTDatasourceById" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TDataSourceServiceTest_delTDatasourceById - 2019.09.12 at 09h 14m 52s.xml">
+      <configuration name="TDataSourceServiceTest.delTDatasourceById" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TDataSourceServiceTest_delTDatasourceById - 2019.09.12 at 11h 48m 03s.xml">
+      <configuration name="TDataSourceServiceTest.delTDatasourceById" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TDataSourceServiceTest_delTDatasourceById - 2019.09.12 at 13h 59m 23s.xml">
+      <configuration name="TDataSourceServiceTest.delTDatasourceById" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TDataSourceServiceTest_delTDatasourceById - 2019.09.12 at 14h 02m 09s.xml">
+      <configuration name="TDataSourceServiceTest.delTDatasourceById" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7969000" />
+    <option name="totallyTimeSpent" value="137778000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25670242" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28619304" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27903682" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.29461756" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067025" side_tool="true" weight="0.2549575" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="bottom" id="Spring" order="11" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32719547" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -634,6 +689,7 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.3297587" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -643,288 +699,361 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/config/shiro/ShiroConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/common/src/test/java/com/qsccc/tools/YYJHToolsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        <state relative-caret-position="1219">
+          <caret line="53" column="66" selection-start-line="53" selection-start-column="66" selection-end-line="53" selection-end-column="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/config/shiro/MyShiroRealm.java">
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/service/auth/TUserRoleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="56" lean-forward="true" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+        <state relative-caret-position="46">
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/user/roleMapper.xml">
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/service/auth/TRolePermissionService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        <state relative-caret-position="46">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/test/mybatis/generator/mybatisgenerator.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/test/mybatis/generator/generatorConfig.xml">
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/service/auth/TRoleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="46">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/TPermission.java">
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/service/user/TUserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/TRolePermission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/TUserRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/TUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/TRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/TDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="6" column="3" selection-start-line="5" selection-start-column="5" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/test/mybatis/generator/generatorConfig.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TPermissionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/auth/TPermission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/auth/TRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/auth/TRolePermission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/auth/TUserRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/datasource/TDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/domain/user/TUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/user/TUserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3306">
-          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../stu_springboot_demo/src/main/java/com/qwh/stu_springboot_demo/controller/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-207" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/YyjhServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#331#332#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/config/jedis/JedisUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/config/jedis/JedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TRolePermissionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/datasource/TDataSourceMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="46">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/user/TUserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="345">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TUserRoleMapper.java">
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/service/datasource/TDataSourceService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="115">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TRoleMapper.java">
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/user/TUserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-959">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yyjh-service/src/test/java/com/qsccc/yyjhservice/YyjhServiceApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/test/java/com/qsccc/yyjhservice/dao/datasource/TDataSourceMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1426">
+          <caret line="72" column="39" lean-forward="true" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/test/java/com/qsccc/yyjhservice/service/datasource/TDataSourceServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/service/datasource/TDataSourceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="54" column="8" lean-forward="true" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/service/auth/TPermissionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/datasource/TDataSourceMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#624#625#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-          </folding>
+          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TRoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="2" column="47" lean-forward="true" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TRolePermissionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret column="39" lean-forward="true" selection-start-column="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TUserRoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TRoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2373">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TRolePermissionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1223">
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TUserRoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/auth/TPermissionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/dao/auth/TPermissionMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="2" column="53" lean-forward="true" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
+        <state relative-caret-position="345">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/qsccc/common/CommonApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/YyjhServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/qsccc/tools/YYJHTools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="65" column="76" selection-start-line="65" selection-start-column="76" selection-end-line="65" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/static/pages/csv.html" />
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/static/pages/datasource.html" />
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/static/pages/datasource/csv.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/static/js/jquery-2.1.1.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/static/js/jquery.ui.widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/enumeration/DataSourceEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="83" selection-start-line="4" selection-start-column="83" selection-end-line="4" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/vo/ControllerResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="55" lean-forward="true" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/controller/TestController.java" />
+    <entry file="file://$PROJECT_DIR$/../springbootdemo2/src/main/java/com/qwh/springbootdemo2/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springbootdemo2/src/main/java/com/qwh/springbootdemo2/excel/ExcelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2762">
+          <caret line="27" column="55" lean-forward="true" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springbootdemo2/src/main/java/com/qwh/springbootdemo2/controller/ExcelDatasController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../springbootdemo2/src/main/java/com/qwh/springbootdemo2/controller/ShiroController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1724">
+          <caret line="99" column="9" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Tencent Files/1191763792/FileRecv/ExcelOper (1).java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Tencent Files/1191763792/FileRecv/ExcelOper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/qsccc/tools/ExcelOper1.java" />
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/qsccc/tools/ExcelOper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="68" column="57" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/controller/RouterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/controller/CSVSourceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/mybatis/datasource/TDataSourceMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="139" column="45" lean-forward="true" selection-start-line="139" selection-start-column="45" selection-end-line="139" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/static/pages/datasource/datasource.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="324" lean-forward="true" selection-start-line="324" selection-end-line="324" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/java/com/qsccc/yyjhservice/controller/ExcelSourceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yyjh-service/src/main/resources/static/js/datasource.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="682" column="30" lean-forward="true" selection-start-line="682" selection-start-column="3" selection-end-line="682" selection-end-column="30" />
+          <folding>
+            <element signature="n#!!block;n#init_csv_datas#0" />
+            <element signature="n#!!block;n#csv_load#0" />
+            <element signature="e#128#134#0" expanded="true" />
+            <element signature="e#134#140#0" expanded="true" />
+            <element signature="e#140#146#0" expanded="true" />
+            <element signature="e#146#152#0" expanded="true" />
+            <element signature="e#133#139#0" expanded="true" />
+            <element signature="e#139#145#0" expanded="true" />
+            <element signature="e#145#151#0" expanded="true" />
+            <element signature="e#6626#7417#0" />
+            <element signature="e#7461#7499#0" />
+            <element signature="n#!!block;n#excel_url#0" />
+            <element signature="n#!!block;n#csv_url#0" />
+            <element signature="n#!!block;n#create_csv_btngroup#0" />
+            <element signature="n#!!block;n#create_excel_btngroup#0" />
+            <element signature="n#!!block;n#create_csv_table#0" />
+            <element signature="n#!!block;n#create_excel_table#0" />
+            <element signature="n#!!block;n#init_csv_table#0" />
+            <element signature="n#!!block;n#init_excel_table#0" />
+            <element signature="n#!!block;n#open_config#0" />
+            <element signature="e#17080#17360#0" />
+            <element signature="n#!!block;n#ex_interpret_submit#0" />
+            <element signature="e#20228#20271#0" />
+            <element signature="e#20555#20838#0" />
+          </folding>
         </state>
       </provider>
     </entry>

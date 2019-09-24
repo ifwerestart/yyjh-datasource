@@ -19,6 +19,7 @@
     <!--添加子工程-->
     <modules>
         <module>yyjh-service</module>
+        <module>common</module>
     </modules>
 
     <properties>

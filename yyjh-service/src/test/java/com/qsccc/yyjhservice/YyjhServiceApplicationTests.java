@@ -16,7 +16,7 @@ public class YyjhServiceApplicationTests {
 
     @Autowired
     private TUserMapper tUserMapper;
-   // @Test
+    @Test
     public  void contextLoads(){
         System.out.println("这是jedis测试："+jedisUtil.get("test2"));
 
@@ -24,7 +24,7 @@ public class YyjhServiceApplicationTests {
 
     @Test
     public  void testMybatis(){
-        System.out.println(tUserMapper.selectByPrimaryKey(1));
+        System.out.println(tUserMapper.findTUserById(1));
     }
 
 

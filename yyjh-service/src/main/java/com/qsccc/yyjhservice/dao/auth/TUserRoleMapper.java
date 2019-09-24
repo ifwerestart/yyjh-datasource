@@ -3,17 +3,17 @@ package com.qsccc.yyjhservice.dao.auth;
 import com.qsccc.yyjhservice.domain.auth.TUserRole;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface TUserRoleMapper {
-    int deleteByPrimaryKey(Integer id);
+    int delTUserRoleById(Integer id);
 
-    int insert(TUserRole record);
+    int addTUserRole(TUserRole record);
 
-    int insertSelective(TUserRole record);
+    TUserRole findTUserRoleById(Integer id);
 
-    TUserRole selectByPrimaryKey(Integer id);
+    int updTUserRoleById(TUserRole record);
 
-    int updateByPrimaryKeySelective(TUserRole record);
-
-    int updateByPrimaryKey(TUserRole record);
+    List<TUserRole> getAll();
 }

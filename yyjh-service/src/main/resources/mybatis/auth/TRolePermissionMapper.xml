@@ -9,23 +9,26 @@
   <sql id="Base_Column_List" >
     id, role_id, permission_id
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+
+  <select id="findTRolePermissionById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from t_role_permission
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+
+  <select id="getAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_role_permission
+  </select>
+
+  <delete id="delTRolePermissionById" parameterType="java.lang.Integer" >
     delete from t_role_permission
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.qsccc.yyjhservice.domain.auth.TRolePermission" >
-    insert into t_role_permission (id, role_id, permission_id
-      )
-    values (#{id,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, #{permissionId,jdbcType=INTEGER}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.qsccc.yyjhservice.domain.auth.TRolePermission" >
+
+  <insert id="addTRolePermission" parameterType="com.qsccc.yyjhservice.domain.auth.TRolePermission" >
     insert into t_role_permission
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -50,7 +53,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.qsccc.yyjhservice.domain.auth.TRolePermission" >
+
+  <update id="updTRolePermissionById" parameterType="com.qsccc.yyjhservice.domain.auth.TRolePermission" >
     update t_role_permission
     <set >
       <if test="roleId != null" >
@@ -62,10 +66,5 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.qsccc.yyjhservice.domain.auth.TRolePermission" >
-    update t_role_permission
-    set role_id = #{roleId,jdbcType=INTEGER},
-      permission_id = #{permissionId,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+
 </mapper>
