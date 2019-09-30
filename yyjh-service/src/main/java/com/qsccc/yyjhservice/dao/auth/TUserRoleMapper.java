@@ -16,4 +16,8 @@ public interface TUserRoleMapper {
     int updTUserRoleById(TUserRole record);
 
     List<TUserRole> getAll();
+
+    int delTUserRoleByUserid(Integer userId);
+
+    List<TUserRole> selectTUserRoleByUserid(Integer userid);
 }

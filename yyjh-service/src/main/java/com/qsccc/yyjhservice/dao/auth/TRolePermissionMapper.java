@@ -16,4 +16,8 @@ public interface TRolePermissionMapper {
     int updTRolePermissionById(TRolePermission record);
 
     List<TRolePermission> getAll();
+
+    List<TRolePermission> getTRolePermissionByRoleid(Integer roleId);
+
+    boolean delRolePermissionByRoleId(Integer roleId);
 }

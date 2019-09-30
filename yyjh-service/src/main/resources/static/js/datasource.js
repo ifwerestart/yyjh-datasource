@@ -1,4 +1,11 @@
+
+var dateformat="";
 $(document).ready(function(){
+    $("#add-btn").click(function () {
+       // alert(1111111111)
+        $("#showDrivers_choosen").modal("show")
+    })
+
     //选择数据源按钮弹窗
     db_btns=$("#showDrivers_choosen").find("div").find(".modal-body").find("button");
 
@@ -9,6 +16,194 @@ $(document).ready(function(){
         //初始化csv的Object
         init_csv_datas();
     });
+
+    //cp
+
+    $("#back").click(function () {
+        window.location.href='/TUser/logout';
+    })
+    $("#datasmanage").click(function () {
+        $("#datasmanage").css("color", "#5CB85C");
+        $("#permissionmanage").css("color", "");
+        $("#datemanage").css("color", "");
+        $("#infomanage").css("color", "");
+        $.ajax({
+            type:"GET",
+            url:"/TUser/datasmanage",
+            contentType:"application/json;charset=utf-8",
+            async:false,
+            success:function(result){
+                if(result.code==1){
+
+                    $("#datascontent").css("display", "block");
+                    $("#permissioncontent").css("display", "none");
+                    $("#datecontent").css("display", "none");
+                    $("#infocontent").css("display", "none");
+                    initTable(1)
+                }
+            },
+            error:function () {
+                alert("该账户不具有访问数据源管理的权限！");
+                $("#datascontent").css("display", "none");
+                $("#permissioncontent").css("display", "none");
+                $("#datecontent").css("display", "none");
+                $("#infocontent").css("display", "none");
+            }
+        });
+
+    });
+    $("#permissionmanage").click(function () {
+        $("#datasmanage").css("color", "");
+        $("#permissionmanage").css("color", "#5CB85C");
+        $("#datemanage").css("color", "");
+        $("#infomanage").css("color", "");
+        $.ajax({
+            type:"GET",
+            url:"/TUser/permissionmanage",
+            contentType:"application/json;charset=utf-8",
+            async:false,
+            success:function(result){
+                if(result.code==1){
+
+                    $("#datascontent").css("display", "none");
+                    $("#permissioncontent").css("display", "block");
+                    $("#datecontent").css("display", "none");
+                    $("#infocontent").css("display", "none");
+                }
+            },
+            error:function () {
+                alert("该账户不具有访问权限管理的权限！");
+                $("#datascontent").css("display", "none");
+                $("#permissioncontent").css("display", "none");
+                $("#datecontent").css("display", "none");
+                $("#infocontent").css("display", "none");
+            }
+        });
+    });
+
+    $("#datemanage").click(function () {
+        $("#datasmanage").css("color", "");
+        $("#permissionmanage").css("color", "");
+        $("#datemanage").css("color", "#5CB85C");
+        $("#infomanage").css("color", "");
+        $.ajax({
+            type:"GET",
+            url:"/TUser/datemanage",
+            contentType:"application/json;charset=utf-8",
+            async:false,
+            success:function(result){
+                if(result.code==1){
+
+                    $("#datascontent").css("display", "none");
+                    $("#permissioncontent").css("display", "none");
+                    $("#datecontent").css("display", "block");
+                    $("#infocontent").css("display", "none");
+                }
+            },
+            error:function () {
+                alert("该账户不具有访问日期格式配置的权限！");
+                $("#datascontent").css("display", "none");
+                $("#permissioncontent").css("display", "none");
+                $("#datecontent").css("display", "none");
+                $("#infocontent").css("display", "none");
+            }
+        });
+
+    });
+    
+    $("#setdate").click(function () {
+        var date=$("input[name='date']:checked").val();
+        if(date=="ymd hms"){
+            dateformat="yyyyMMdd hhmmss";
+        }else if (date=="m/d/y h:m:s"){
+            dateformat="MM/dd/yyyy hh:mm:ss";
+        }else if(date=="ymd"){
+            dateformat="yyyyMMdd";
+        }else if (date=="m/d/y"){
+            dateformat="MM/dd/yyyy";
+        }else if(date=="h:m:s"){
+            dateformat="hh:mm:ss";
+        }
+        alert("日期格式配置成功！")
+    })
+
+
+    $("#infomanage").click(function () {
+        $("#datasmanage").css("color", "");
+        $("#permissionmanage").css("color", "");
+        $("#datemanage").css("color", "");
+        $("#infomanage").css("color", "#5CB85C");
+
+        $("#datascontent").css("display", "none");
+        $("#permissioncontent").css("display", "none");
+        $("#datecontent").css("display", "none");
+        $("#infocontent").css("display", "block");
+
+        $.ajax({
+            type:"GET",
+            url:"/TUser/userinfo",
+            contentType:"application/json;charset=utf-8",
+            async:false,
+            success:function(result){
+                console.log(result);
+                if(result.loginid==null){
+                    $("#loginid").html("");
+                }else {
+                    $("#loginid").html(result.loginid);
+                }
+                if(result.password==null){
+                    $("#ppwd").html("");
+                }else {
+                    $("#ppwd").html(result.password);
+                }
+                if(result.nickname==null){
+                    $("#nickname").html("");
+                }else {
+                    $("#nickname").html(result.nickname);
+                }
+                if(result.userimg==null){
+                    $("#userimg").html("");
+                }else {
+                        uploadImg($('#userimg'), imgBox);
+                }
+                if(result.remark==null){
+                    $("#remark").html("");
+                }else {
+                    $("#remark").html(result.remark);
+                }
+
+                if(result.email==null){
+                    $("#email").html("");
+                }else {
+                    $("#email").html(result.email);
+                }
+                if(result.tel==null){
+                    $("#tel").html("");
+                }else {
+                    $("#tel").html(result.tel);
+                }
+                if(result.createTime==null){
+                    $("#create_time").html("");
+                }else {
+                    var cretime=dateFormat(result.createTime,dateformat);
+                    $("#create_time").html(cretime);
+                }
+                if(result.updateTime==null){
+                    $("#update_time").html("");
+                }else {
+                    var updtime=dateFormat(result.updateTime,dateformat);
+                    $("#update_time").html(updtime);
+                }
+                if(result.state==null){
+                    $("#state").html("");
+                }else {
+                    $("#state").html(result.state);
+                }
+            }
+        });
+    })
+
+    //cp
 
     //EXCEL弹窗
     $(db_btns[1]).click(function(){
@@ -86,6 +281,74 @@ var excel_datas=[];
 var excel_index=-1;
 var excel_interpret=[];
 
+//cp
+
+function uploadImg(element, tag) {
+    var file = tag.files[0];
+
+    var imgSrc;
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function() {
+        imgSrc = this.result;
+        var imgs = document.createElement("img");
+        imgs.style.width = '70px';
+        imgs.style.height = '70px';
+        imgs.style.borderRadius = '50%'
+        $(imgs).attr("src", imgSrc);
+        element.append(imgs);
+    };
+}
+
+Date.prototype.format = function(fmt) {
+    var o = {
+        "M+" : this.getMonth()+1,                 //月份
+        "d+" : this.getDate(),                    //日
+        "h+" : this.getHours(),                   //小时
+        "m+" : this.getMinutes(),                 //分
+        "s+" : this.getSeconds(),                 //秒
+        "q+" : Math.floor((this.getMonth()+3)/3), //季度
+        "S"  : this.getMilliseconds()             //毫秒
+    };
+    if(/(y+)/.test(fmt)) {
+        fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+    }
+    for(var k in o) {
+        if(new RegExp("("+ k +")").test(fmt)){
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+        }
+    }
+    return fmt;
+}
+
+function dateFormat(time,dateformat) {
+    var curTime;
+    if (dateformat!=""){
+        if(dateformat=="yyyyMMdd hhmmss"){
+            var timeDate=new Date(time);
+            var year=timeDate.getFullYear()+"年";
+            var month=timeDate.getMonth()+1+"月";
+            var date=timeDate.getDate()+"日";
+            var hour=timeDate.getHours()+"时";
+            var minute=timeDate.getMinutes()+"分";
+            var second=timeDate.getSeconds()+"秒";
+            curTime=year+month+date+" "+hour+minute+second;
+        }else if( dateformat=="yyyyMMdd"){
+            var timeDate=new Date(time);
+            var year=timeDate.getFullYear()+"年";
+            var month=timeDate.getMonth()+1+"月";
+            var date=timeDate.getDate()+"日";
+            curTime=year+month+date;
+        }else{
+            var timeDate=(new Date(time)).getTime();
+            curTime=new Date(timeDate).format(dateformat);
+        }
+    }else {
+        curTime=time;
+    }
+    return curTime;
+}
+//cp
 
 //初始化CSV的Object
 function init_csv_datas(){
@@ -674,15 +937,5 @@ function judgeFilter(obj){
     }else{
         document.getElementById(id).setAttribute("disabled", true);
     }
-/*
-    var id = $("label").find('input[type="radio"]:checked');
-    $('input[type="radio"]').click(function() {
-        if(this.value=="yes"){
-            document.getElementById("config"+radio_count).removeAttribute("disabled");
-        }else{
-            document.getElementById("config"+radio_count).setAttribute("disabled", true);
-        }
-    });
-*/
 
 }

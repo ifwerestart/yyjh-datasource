@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Primary
@@ -23,7 +24,7 @@ public class TDataSourceServiceImpl implements  TDataSourceService{
     private TDataSourceMapper tDataSourceMapper;
     @Override
     public boolean delTDatasourceById(Integer id) {
-        int count=tDataSourceMapper.delTDatasourceById(2);
+        int count=tDataSourceMapper.delTDatasourceById(id);
         if(count>0)
             return true;
         return false;
@@ -53,5 +54,55 @@ public class TDataSourceServiceImpl implements  TDataSourceService{
     @Override
     public List<TDataSource> getAll() {
         return tDataSourceMapper.getAll();
+    }
+
+    @Override
+    public List<TDataSource> getAllByPage(Map<String,Object> map) {
+        return tDataSourceMapper.getAllByPage(map);
+    }
+
+    @Override
+    public int getCount() {
+        return tDataSourceMapper.getCount();
+    }
+
+    @Override
+    public boolean batchDelById(List<Integer> id_list) {
+        return tDataSourceMapper.batchDelById(id_list);
+    }
+
+    @Override
+    public List<TDataSource> search(Map<String, String> map) {
+        return tDataSourceMapper.search(map);
+    }
+
+
+    @Override
+    public boolean createAutoTable(String name, List colums) {
+        int count=tDataSourceMapper.createAutoTable(name,colums);
+        if(count==0){
+            return  true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean addByFilter(String name, List cols) {
+        int count=tDataSourceMapper.addByFilter(name,cols);
+        if(count>0)
+            return  true;
+        return false;
+    }
+
+    public List<String> findAllTables(String database_name){
+        return tDataSourceMapper.findAllTables(database_name);
+    }
+
+    @Override
+    public boolean delTable(String table_name) {
+        int count=tDataSourceMapper.delTable(table_name);
+        if(count>0)
+            return true;
+        return false;
     }
 }

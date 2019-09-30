@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap-select.css" />
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap-table.min.css" />
+	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html {
+			height: 100%;
+		}
+
+		body {
+			height: 100%;
+		}
+
+		.container {
+			width: 100%;
+			height: 10%;
+			text-align: center;
+			background-color: #5cb85c;
+			color: white;
+		}
+
+		.catalogue {
+			width: 13%;
+			height: 90%;
+			float: left;
+		}
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.item {
+			width: 100%;
+			height: 5%;
+			font-size: 1.3em;
+			float: left;
+			margin-top: 15%;
+			margin-left: 7%;
+		}
+
+		.itemtext {
+			width: 20%;
+			float: left;
+		}
+
+		.items {
+			width: 85%;
+			height: 85%;
+			float: left;
+			display: none;
+		}
+
+		.add-btn {
+			float: right;
+			margin-top: 5%;
+		}
+
+		.choose-btn {
+			align-content: center;
+			vertical-align: middle;
+			min-width: 200px;
+			min-height: 200px;
+			border: solid #000000 1px;
+			border-radius: 0;
+		}
+
+		.modal-content-color {
+			background-color: #e1edf0;
+		}
+
+		.choose-label {
+			font-family: "黑体";
+			font-weight: bold;
+			font-size: large;
+			text-align: center;
+		}
+
+		.csv-add-btn {
+			float: right;
+		}
+
+		.csv-files {
+			border: solid #000000 1px;
+			min-width: 300px;
+			min-height: 300px;
+			margin-top: 10px;
+		}
+
+		input[type='file'] {
+			visibility: hidden;
+			/*隐藏,不是消失display:none*/
+		}
+		/*cp*/
+
+		.m_content {
+			position: absolute;
+			left: 26%;
+			top: 10%;
+			width: 350px;
+			height: 350px;
+			margin-top: 70px;
+			border: 1px solid #fff;
+			border-radius: 20px;
+			overflow: hidden;
+		}
+
+		.m_header {
+			text-align: center;
+		}
+
+		.role {
+			width: 150px;
+			color: black;
+		}
+		h4{
+			font-weight: bold;
+		}
+
+	</style>
+</head>
+
+<body style="overflow-x:hidden">
+<div class="container">
+	<h2>易源聚合数据平台<button class="btn btn-success" id="back" style="float: right" >退出登录</button></h2>
+
+</div>
+<div class="catalogue">
+	<ul style="height: 100%;">
+		<li id="datasmanage" class="item">
+			<div class="itemtext glyphicon glyphicon-th"></div>
+			<div>数据源管理</div>
+		</li>
+		<li id="permissionmanage" class="item">
+			<div class="itemtext glyphicon glyphicon-cog"></div>权限管理</li>
+		<li id="datemanage" class="item">
+			<div class="itemtext glyphicon glyphicon-time"></div>日期格式配置</li>
+		<li id="infomanage" class="item">
+			<div class="itemtext glyphicon glyphicon-user"></div>个人信息</li>
+	</ul>
+</div>
+<div id="datascontent" class="items" style="margin-top: 0.3%">
+
+
+	<div style="display: inline-block;width: 1200px;overflow: scroll;margin-left: 20px">
+		<div >
+			<div>
+				<div class="choose-label">全部数据源
+					<button class = 'btn btn-danger' id='batch_del' style="float: left">批量删除</button>
+					<button class = 'btn btn-success' id='add-btn' style="float: left">增加数据源</button>
+				</div>
+			</div>
+			<div  style="overflow:auto;width:98%;">
+
+				<button class = 'btn btn-success' id='abandon_screen' style="float: right;margin-left: 2px;height: 25px;padding-top: -1px">取消筛选</button>
+
+				<button class = 'btn btn-info' id='screen' style="float: right;margin-left: 2px;height: 25px;padding-top: -1px">筛选</button>
+
+				<input id="search_input" type="text" placeholder="搜索..." style="float: right;margin-left: 2px"/>
+
+				<select id="search_select" style="float: right;height: 25px;margin-left: 2px" id="type_choose">
+					<option value ="default">-默认全选-</option>
+					<option value ="csv">csv</option>
+					<option value ="excel">excel</option>
+					<option value="mysql">mysql</option>
+					<option value="redis">redis</option>
+				</select>
+
+				<table  id="view_allDatasource" class="table table-hover text-nowrap" >
+
+				</table>
+				<table  id="view_screenDatasource" class="table table-hover text-nowrap" style="display: none">
+
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+
+
+</div>
+<div id="permissioncontent" class="items" style="margin-top:3%">
+	<div style="height: 50%;width:80%;margin:auto auto auto auto;">
+		<div>
+			<div>
+				<h4>设置用户-角色：</h4>
+				<br>
+				<div>
+					<label for="choose_user"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选择用户：</label>
+					<select id="choose_user" class="role">
+
+					</select>
+				</div>
+				<br>
+				<div>
+					<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置角色：</label>
+					<div id="set_role" style="margin-left: 10%">
+
+					</div>
+				</div>
+
+			</div>
+			<div>
+				<button id="role_submit" class="btn btn-success">提交</button>
+			</div>
+		</div>
+	</div>
+	<div style="height: 50%;width:80%;margin:auto auto auto auto;">
+		<div>
+
+			<div>
+				<h4>设置角色-权限：</h4>
+				<br>
+				<div>
+					<label for="choose_role">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选择角色：</label>
+					<select id="choose_role" class="role">
+
+					</select>
+				</div>
+				<br>
+				<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置角色的权限：</label>
+				<div style="margin-left: 10%">
+					<div>
+						<label>增加&nbsp;&nbsp;</label><input name="permissions" type="checkbox" value="create" />&nbsp;&nbsp;&nbsp;
+						<label>删除&nbsp;&nbsp;</label><input name="permissions" type="checkbox" value="delete" />&nbsp;&nbsp;&nbsp;
+						<label>修改&nbsp;&nbsp;</label><input name="permissions" type="checkbox" value="update" />&nbsp;&nbsp;&nbsp;
+						<label>查询&nbsp;&nbsp;</label><input name="permissions" type="checkbox" value="select" />&nbsp;&nbsp;&nbsp;
+					</div>
+					<div>
+						<label>设置用户和角色&nbsp;&nbsp;</label><input name="permissions" type="checkbox" value="oper_user_role" />&nbsp;&nbsp;&nbsp;
+						<label>设置角色和权限&nbsp;&nbsp;</label><input name="permissions" type="checkbox" value="oper_role_permission" />&nbsp;&nbsp;&nbsp;
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<div>
+			<button id="permission_submit" class="btn btn-success">提交</button>
+		</div>
+	</div>
+</div>
+<div id="datecontent" class="items" style="margin-top: -40%;margin-left:15%;">
+	<div style="height: 80%;width:80%;margin:auto auto auto auto;">
+		<h4>日期格式配置：</h4>
+		<br/>
+		<div style="margin-left: 5%">
+			<input type="radio" name="date" value="ymd hms"/>年月日 时分秒
+			<br><br>
+			<input type="radio" name="date" value="m/d/y h:m:s"/>月/日/年 时：分：秒
+			<br><br>
+			<input type="radio" name="date" value="ymd"/>年月日
+			<br><br>
+			<input type="radio" name="date" value="m/d/y"/>月/日/年
+			<br><br>
+			<input type="radio" name="date" value="h:m:s"/>时：分：秒
+		</div>
+		<br>
+		<br>
+		<div>
+			<button class="btn btn-success" id="setdate" style="margin-left: 5%">配置日期</button>
+		</div>
+	</div>
+</div>
+<div id="infocontent" class="items" style="margin-top: -40%;margin-left:15%;">
+	<div style="height: 80%;width:80%;margin:auto auto auto auto;">
+		<h4>用户个人信息：</h4>
+		<br />
+		<div style="margin-left: 5%">
+			<label>用户名：</label>
+			<span id="loginid"></span>
+			<br />
+			<label>密码：</label>
+			<span id="ppwd"></span>
+			<br />
+			<label>昵称：</label>
+			<span id="nickname"></span>
+			<br />
+			<label>头像：</label>
+			<div id="userimg">
+
+			</div>
+			<br />
+			<label>邮箱：</label>
+			<span id="email"></span>
+			<br />
+			<label>电话：</label>
+			<span id="tel"></span>
+			<br />
+			<label>创建账户时间：</label>
+			<span id="create_time"></span>
+			<br />
+			<label>修改账户时间：</label>
+			<span id="update_time"></span>
+			<br />
+			<label>备用字段：</label>
+			<span id="remark"></span>
+			<br />
+			<label>账户状态：</label>
+			<span id="state"></span>
+
+		</div>
+	</div>
+</div>
+
+
+
+<!-- 数据源选择模态框 -->
+<div>
+	<div id="showDrivers_choosen" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content modal-content-color">
+					<div class="modal-header">
+						<div class="choose-label">请选择数据源
+							<span data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-lg-1"></div>
+							<button class="col-lg-5 btn btn-info choose-btn">CSV</button>
+							<button class="col-lg-5 btn btn-info choose-btn">EXCEL</button>
+							<div class="col-lg-1"></div>
+						</div>
+						<div class="row">
+							<div class="col-lg-1"></div>
+							<button class="col-lg-5 btn btn-info choose-btn">MYSQL</button>
+							<button class="col-lg-5 btn btn-info choose-btn">REDIS</button>
+							<div class="col-lg-1"></div>
+						</div>
+					</div>
+					<div class="modal-footer">
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+<!--csv文件导入模态框-->
+<div>
+	<div id="csv_import" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content modal-content-color">
+					<div class="modal-header">
+						<div class="choose-label">文件导入
+							<span id="csv_import_close" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-lg-1"></div>
+							<div class="col-lg-10">
+								<button  class="btn btn-success csv-add-btn" onclick="document.getElementById('csv_upload').click()">添加</button>
+							</div>
+							<div class="col-lg-1"></div>
+
+						</div>
+						<div class="row">
+
+							<div class="col-lg-1"></div>
+							<div class="col-lg-10">
+								<div class="row files csv-files">
+									<!-- 文件上传功能-->
+									<div id="csv_datas">
+										<table class="table table-hover" >
+											<caption>文件信息</caption>
+											<thead>
+											<tr>
+												<th>文件名称</th>
+												<th>图片格式</th>
+												<th>文件大小</th>
+											</tr>
+											</thead>
+											<tbody id="table_datas">
+
+											</tbody>
+										</table>
+									</div>
+									<!--生成上传的文件信息-->
+
+									<div>
+										<input type="file" name="csv_upload" id="csv_upload" accept=".csv" data-allowed-file-extensions='["csv"]' />
+									</div>
+
+
+								</div>
+							</div>
+							<div class="col-lg-1"></div>
+
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div>
+							<button id="w_preview" class="btn btn-info">全部预览</button>
+							<button id="w_submit" class="btn btn-success">全部上传</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<!--excel文件导入模态框-->
+<div>
+	<div id="excel_import" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content modal-content-color">
+					<div class="modal-header">
+						<div class="choose-label">文件导入
+							<span id="excel_import_close" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-lg-1"></div>
+							<div class="col-lg-10">
+								<button  class="btn btn-success csv-add-btn" onclick="document.getElementById('excel_upload').click()">添加</button>
+							</div>
+							<div class="col-lg-1"></div>
+
+						</div>
+						<div class="row">
+
+							<div class="col-lg-1"></div>
+							<div class="col-lg-10">
+								<div class="row files csv-files">
+									<!-- 文件上传功能-->
+									<div  class="table-responsive">
+										<table class="table table-hover" id="excel_datas" >
+
+										</table>
+									</div>
+									<!--生成上传的文件信息-->
+
+									<div>
+										<input type="file" name="excel_upload" id="excel_upload" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+									</div>
+
+
+								</div>
+							</div>
+							<div class="col-lg-1"></div>
+
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div>
+							<button id="excel_allpreview" class="btn btn-info">全部预览</button>
+							<button id="excel_allsubmit" class="btn btn-success">全部上传</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- csv全部预览模态框 -->
+<div>
+	<div id="csv_preview" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content modal-content-color">
+				<div class="modal-header">
+					<!--生成选项卡-->
+					<span id="csv_btngroup"></span>
+					<span id="csv_preview_close" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+
+				</div>
+				<div class="modal-body">
+					<div class="table-responsive">
+						<table  id="csv_table" class="table table-hover" >
+							<!--<caption>文件信息</caption>-->
+
+						</table>
+					</div>
+				</div>
+				<div class="modal-footer">
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- excel全部预览模态框 -->
+<div>
+	<div id="excel_preview" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content modal-content-color">
+				<div class="modal-header">
+					<!--生成选项卡-->
+					<span id="excel_btngroup"></span>
+					<span id="excel_preview_close" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+
+				</div>
+				<div class="modal-body">
+					<div id="select-group">
+
+					</div>
+					<div class="table-responsive">
+						<table  id="excel_table" class="table table-hover" >
+
+						</table>
+					</div>
+				</div>
+				<div class="modal-footer">
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- 打开配置模态框 -->
+<div>
+	<div id="open_config" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content modal-content-color">
+				<div class="modal-header">
+					<!--生成选项卡-->
+					<span id="open_config_close" data-dismiss="modal" aria-hidden="true" class="glyphicon glyphicon-circle-arrow-left" style="font-size: large"></span>
+
+					<!--close glyphicon glyphicon-remove-circle-->
+				</div>
+				<form action="#" onsubmit="return false" id="form-filter">
+					<div class="modal-body">
+						<div id="line-filter">
+							<div style="font-size: 16px;font-weight: bold;">行号过滤：</div>
+							<span>起始行号：<input type="text"  id="start-line" /></span>
+							<span>结束行号：<input type="text" id="end-line" /></span>
+						</div>
+
+						<div id="character-filter" style="margin-top: 25px">
+							<div style="font-size: 16px;font-weight: bold;">文本过滤：</div>
+							<div id="add-filter">
+								<div id="index-string">
+									<span>起始文本：<input type="text" class="start-string"  /></span>
+									<span>结束文本：<input type="text" class="end-string" /></span>
+									<span>包含文本：<input type="text" class="content-string"/></span>
+								</div>
+
+								<div id="add-char-filter">
+
+								</div>
+							</div>
+
+							<div style="font-size: 16px;font-weight: bold;margin-top: 25px">过滤方式：</div>
+							<div id="index-logic">
+								<label class="radio-inline"><input type="radio" name="optradio" value="and">合并</label>
+								<label class="radio-inline"><input type="radio" name="optradio" value="or" checked>或者</label>
+							</div>
+							<div style="margin-top: -30px;margin-left: 200px">
+								<img src="../../img/add.png" width="35px" height="35px" id="img-add">
+							</div>
+
+
+
+						</div>
+
+					</div>
+					<div class="modal-footer">
+						<input type="reset" value="重置" class="btn btn-default"/>
+						<button id="finish" onclick="ex_interpret_submit()" class="btn btn-success">完成</button>
+
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+<!--mysql数据源配置-->
+<div>
+	<div id="mysql-config" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content modal-content-color">
+					<div class="modal-header">
+						<div class="choose-label">mysql数据源配置
+							<span id="mysql-config-close" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+
+						</div>
+
+					</div>
+
+					<form class="form-horizontal" role="form" action="#" onsubmit="return false" id="fill_config">
+						<div class="form-group">
+							<label for="host" class="col-sm-2 control-label">IP地址：</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="host"
+									   placeholder="请输入IP地址">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="port" class="col-sm-2 control-label">端口号：</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="port"
+									   placeholder="请输入端口">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="username" class="col-sm-2 control-label">用户名：</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="username"
+									   placeholder="请输入用户名">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-sm-2 control-label">密码：</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="password" name="password"
+									   placeholder="请输入密码">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">数据库名：</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="database-name"
+									   placeholder="请输入数据库名">
+							</div>
+						</div>
+
+
+						<div class="modal-footer">
+							<input type="reset" value="重置" class="btn btn-default" />
+							<button onclick="mysql_connect()" class="btn btn-success">连接上传</button>
+						</div>
+					</form>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--excel修改文件导入模态框-->
+<div>
+	<div id="excel_import1" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content modal-content-color">
+					<div class="modal-header">
+						<div class="choose-label">文件导入
+							<span id="excel_import_close1" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-lg-1"></div>
+							<div class="col-lg-10">
+								<button  class="btn btn-success csv-add-btn" onclick="document.getElementById('excel_upload1').click()">选择</button>
+							</div>
+							<div class="col-lg-1"></div>
+
+						</div>
+						<div class="row">
+
+							<div class="col-lg-1"></div>
+							<div class="col-lg-10">
+								<div class="row files csv-files">
+									<!-- 文件上传功能-->
+									<div  class="table-responsive">
+										<table class="table table-hover" id="excel_datas1" >
+
+										</table>
+									</div>
+									<!--生成上传的文件信息-->
+
+									<div>
+										<input type="file" name="excel_upload" id="excel_upload1" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+									</div>
+
+
+								</div>
+							</div>
+							<div class="col-lg-1"></div>
+
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div>
+							<button id="e_preview1" class="btn btn-info">预览</button>
+							<button id="e_submit1" class="btn btn-success">修改</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<!-- excel修改全部预览模态框 -->
+<div>
+	<div id="excel_preview1" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content modal-content-color">
+				<div class="modal-header">
+					<!--生成选项卡-->
+					<span id="excel_btngroup1"></span>
+					<span id="excel_preview1_close" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+
+				</div>
+				<div class="modal-body">
+					<div id="select-group1">
+
+					</div>
+					<div class="table-responsive">
+						<table  id="excel_table1" class="table table-hover" >
+
+						</table>
+					</div>
+				</div>
+				<div class="modal-footer">
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+<!-- excel修改，打开excel过滤配置模态框 -->
+<div>
+	<div id="open_config1" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content modal-content-color">
+				<div class="modal-header">
+					<!--生成选项卡-->
+					<span id="open_config1_close" data-dismiss="modal" aria-hidden="true" class="glyphicon glyphicon-circle-arrow-left" style="font-size: large"></span>
+				</div>
+				<form action="#" onsubmit="return false" id="form-filter1">
+					<div class="modal-body">
+						<div id="line-filter1">
+							<div style="font-size: 16px;font-weight: bold;">行号过滤：</div>
+							<span>起始行号：<input type="text"  id="start-line1" /></span>
+							<span>结束行号：<input type="text" id="end-line1" /></span>
+						</div>
+
+						<div id="character-filter1" style="margin-top: 25px">
+							<div style="font-size: 16px;font-weight: bold;">文本过滤：</div>
+							<div id="add-filter1">
+								<div id="index-string1">
+									<span>起始文本：<input type="text" class="start-string"  /></span>
+									<span>结束文本：<input type="text" class="end-string" /></span>
+									<span>包含文本：<input type="text" class="content-string"/></span>
+								</div>
+
+								<div id="add-char-filter1">
+
+								</div>
+							</div>
+
+							<div style="font-size: 16px;font-weight: bold;margin-top: 25px">过滤方式：</div>
+							<div id="index-logic1">
+								<label class="radio-inline"><input type="radio" name="optradio" value="and">合并</label>
+								<label class="radio-inline"><input type="radio" name="optradio" value="or" checked>或者</label>
+							</div>
+							<div style="margin-top: -30px;margin-left: 200px">
+								<img src="../../img/add.png" width="35px" height="35px" id="img-add1">
+							</div>
+
+
+
+						</div>
+
+					</div>
+					<div class="modal-footer">
+						<input type="reset" value="重置" class="btn btn-default"/>
+						<button id="finish1" onclick="ex_interpret_submit1()" class="btn btn-success">完成</button>
+
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+
+
+<!--修改mysql数据源配置-->
+<div>
+	<div id="mysql-config1" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content modal-content-color">
+					<div class="modal-header">
+						<div class="choose-label">mysql数据源配置
+							<span id="mysql-config1-close" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+						</div>
+
+					</div>
+
+					<form class="form-horizontal" role="form" action="#" onsubmit="return false" id="fill_config1">
+						<div class="form-group">
+							<label for="host1" class="col-sm-2 control-label">IP地址：</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="host1"
+									   placeholder="请输入IP地址">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="port1" class="col-sm-2 control-label">端口号：</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="port1"
+									   placeholder="请输入端口">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="username1" class="col-sm-2 control-label">用户名：</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="username1"
+									   placeholder="请输入用户名">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password1" class="col-sm-2 control-label">密码：</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="password1" name="password"
+									   placeholder="请输入密码">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">数据库名：</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="database-name1"
+									   placeholder="请输入数据库名">
+							</div>
+						</div>
+
+
+
+						<div class="modal-footer">
+							<input type="reset" value="重置" class="btn btn-default" />
+							<button onclick="mysql_connect_update1()" class="btn btn-success">连接修改</button>
+						</div>
+					</form>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- mysql数据源入库 -->
+<div>
+	<div id="mysql_oper" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content modal-content-color">
+				<div class="modal-header">
+					<div class="choose-label">数据库表信息
+						<span id="mysql_oper_close" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+					</div>
+
+
+				</div>
+
+				<div class="modal-body">
+					<table class="table table-hover table-bordered" >
+						<!--<caption>数据库表信息</caption>-->
+						<thead >
+						<tr>
+							<th>选择</th>
+							<th>数据库名</th>
+							<th>表名</th>
+						</tr>
+						</thead>
+						<tbody id="mysql-table">
+
+						</tbody>
+
+						<div class="checkbox">
+							<label><input type="checkbox" id="mysql_all_select">全选</label>
+						</div>
+
+					</table>
+
+
+				</div>
+
+
+				<div class="modal-footer">
+
+					<div>
+						<button id="mysql_enter" onclick="mysql_enter()" class="btn btn-info">全部入库</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+</body>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+<script src="../../bootstrap/js/bootstrap-select.js"></script>
+<script src="../../bootstrap/js/bootstrap-table.min.js"></script>
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../js/jquery.ui.widget.js"></script>
+<script src="../../js/jquery.iframe-transport.js"></script>
+<script src="../../js/jquery.fileupload.js"></script>
+<script src="../../js/datasource.js"></script>
+<script src="../../js/updateExcel.js"></script>
+<script src="../../js/updateMysql.js"></script>
+<script src="../../js/mysql.js"></script>
+<!--cp-->
+<script src="../../js/setPermission.js"></script>
+<!--cjj-->
+<script src="../../js/alldatasource.js"></script>
+
+</html>

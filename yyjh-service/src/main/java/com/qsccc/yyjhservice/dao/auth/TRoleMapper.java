@@ -16,4 +16,6 @@ public interface TRoleMapper {
     int updTRoleById(TRole record);
 
     List<TRole> getAll();
+
+    TRole findTRole(String rolename);
 }

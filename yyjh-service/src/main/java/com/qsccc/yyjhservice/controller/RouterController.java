@@ -12,6 +12,12 @@ public class RouterController {
 
     @RequestMapping("/datasource")
     public  String datasource(){
-        return "datasource/datasource";
+        return "datasource/mainPages";
     }
+
+    @RequestMapping("/login")
+    public String login(){
+        return "datasource/Login";
+    }
+
 }

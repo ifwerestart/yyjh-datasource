@@ -19,7 +19,7 @@
     <result column="encode" property="encode"  />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, user_id, type, createtime, updatetime, database_name, alias, driver, url, port, 
+    id, user_id, type, createtime, updatetime, database_name, alias, driver, url, port,
     auth, username, password, description, encode
   </sql>
 
@@ -187,5 +187,94 @@
     <include refid="Base_Column_List" />
     from t_datasource
   </select>
+
+
+  <!--修改部分-->
+  <!-- 数据全部查询 -->
+  <select id="getAllByPage" resultMap="BaseResultMap" parameterType="java.util.Map">
+  	SELECT
+    id, user_id, type, createtime, updatetime, database_name, alias, driver, url, port,
+    auth, username , description, encode
+    FROM t_datasource
+  <if test="null != beginNumber and null != limit">
+    LIMIT #{beginNumber},#{limit}
+  </if>
+  </select>
+
+  <!-- 查询单表中数据总量 -->
+  <select id="getCount" resultType="int">
+  	SELECT COUNT(1) FROM t_datasource
+  </select>
+
+  <!--批量删除-->
+  <delete id="batchDelById" parameterType="java.util.List">
+    delete from t_datasource where id in
+    <foreach collection="list" item="id" open="(" close=")" separator=",">
+      #{id}
+    </foreach>
+  </delete>
+
+  <!--搜索-->
+  <select id="search" resultMap="BaseResultMap" parameterType="java.util.Map">
+    select
+    <include refid="Base_Column_List" />
+    from t_datasource
+    <if test="(type != null and type != '')or (content != '' and content != null)" >
+      where
+    </if>
+    <if test="type != null and type != ''" >
+      type= #{type}
+    </if>
+    <if test="type != null and type != '' and content != null and content != ''" >
+      and(
+    </if>
+    <if test="content != null and content != ''" >
+      id like "%${content}%"
+      or user_id like "%${content}%"
+      or createtime like "%${content}%"
+      or updatetime like "%${content}%"
+      or database_name like"%${content}%"
+      or alias like "%${content}%"
+      or driver like "%${content}%"
+      or url like "%${content}%"
+      or port like "%${content}%"
+      or auth like "%${content}%"
+      or username like "%${content}%"
+      or password like "%${content}%"
+      or description like "%${content}%"
+      or encode like "%${content}%"
+
+    </if>
+    <if test="type != null and type != '' and content != null and content != ''" >
+      )
+    </if>
+
+  </select>
+
+
+  <update id="createAutoTable">
+    create table ${tableName} (
+    <foreach collection="colums" item="column" separator=",">
+      ${column} varchar(255)
+    </foreach>
+    );
+  </update>
+
+  <insert id="addByFilter" >
+    insert into ${tableName}
+    values (
+    <foreach collection="colValues" item="col" separator=",">
+      #{col}
+    </foreach>
+    )
+  </insert>
+
+  <select id="findAllTables" resultType="java.lang.String" parameterType="java.lang.String">
+    select table_name from information_schema.tables where table_schema=#{database_name} and table_type='base table'
+  </select>
+
+  <delete id="delTable" parameterType="java.lang.String" >
+    drop table ${table_name}
+  </delete>
 
 </mapper>

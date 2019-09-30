@@ -17,5 +17,5 @@ public interface TPermissionMapper {
 
     List<TPermission> getAll();
 
-
+    TPermission findTPermissionByPerm(String permissoin);
 }

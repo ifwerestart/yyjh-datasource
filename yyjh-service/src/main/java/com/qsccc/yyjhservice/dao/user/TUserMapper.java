@@ -16,4 +16,12 @@ public interface TUserMapper {
     int updTUserById(TUser record);
 
     List<TUser> getAll();
+
+    //cp
+    TUser selectByLoginid(String loginid);
+    int updTUser(TUser user);
+
+
+    //cjj
+    TUser findTUserByLoginId(String loginId);
 }

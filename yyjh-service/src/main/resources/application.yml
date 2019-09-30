@@ -39,6 +39,25 @@ spring:
       pool-name: DatebookHikariCP
       type: com.zaxxer.hikari.HikariDataSource
 
+  application:
+    name: spirng-boot-mail
+
+  mail:
+    host: smtp.qq.com
+    username: 907718468@qq.com
+    password: rdcrxuupqkbmbfaa
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+mail:
+  fromMail:
+    addr: 907718468@qq.com
 #Mybatis
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
@@ -61,3 +80,4 @@ file:
       datasource:
         csv: /yyjhfiles/datasource/csv
         excel: /yyjhfiles/datasource/excel
+        img: /yyjhfiles/datasource/img
