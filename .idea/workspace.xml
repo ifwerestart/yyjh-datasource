@@ -668,7 +668,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570678507658" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570678541761" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -866,7 +866,7 @@
       <workItem from="1570496278257" duration="27008000" />
       <workItem from="1570582304621" duration="13665000" />
       <workItem from="1570672893499" duration="8000" />
-      <workItem from="1570672905478" duration="5435000" />
+      <workItem from="1570672905478" duration="5709000" />
     </task>
     <servers />
   </component>
@@ -903,14 +903,14 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321031000" />
+    <option name="totallyTimeSpent" value="321305000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="89" y="276" width="1450" height="596" extended-state="1" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="top" id="Bean Validation" order="0" side_tool="true" weight="0.32017544" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28304598" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26407507" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
