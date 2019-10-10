@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qsccc.yyjhservice.dao.datasource.CSVSourceMapper" >
+
+
+  <insert id="addCSVData" parameterType="String" >
+     ${value}
+  </insert>
+
+
+  <update id="createTable" parameterType="String">
+     ${value}
+  </update>
+
+    <select id="isTableExist" parameterType="string" resultType="int">
+    select count(*) from information_schema.TABLES where table_name = #{tableName}
+    </select>
+
+
+
+</mapper>

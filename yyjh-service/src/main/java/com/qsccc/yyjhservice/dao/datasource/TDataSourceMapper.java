@@ -27,11 +27,13 @@ public interface TDataSourceMapper {
 
     List<TDataSource> search(Map<String, String> map);
 
-    int createAutoTable(@Param("tableName") String name, @Param("colums")List colums);
+    int createAutoTable(@Param("tableName") String name, @Param("colums") List colums);
 
-    int addByFilter(@Param("tableName") String name, @Param("colValues")List cols);
+    int addByFilter(@Param("tableName") String name, @Param("colValues") List cols);
 
     List<String> findAllTables(String database_name);
 
     int delTable(String table_name);
+
+    TDataSource findEqualTDatasource(TDataSource record);
 }

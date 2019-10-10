@@ -43,6 +43,11 @@ $(document).ready(function(){
         $(".dowebok").css("display","block");
     });
 
+    $("#registerback").click(function () {
+        $(".dowebok").css("display","block");
+        $("#register_modal").modal("hide")
+    })
+
     $("#fogusername").blur(function(){
         //到数据库查找用户名
         var fogusername=$("#fogusername").val();

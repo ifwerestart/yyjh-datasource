@@ -18,6 +18,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.util.*;
 
@@ -28,6 +29,8 @@ public class ExcelSourceController {
     private TDataSourceService tDataSourceService;
    // @Autowired
     //private ExcelDatasService excelDatasService;
+   @Autowired
+   private HttpSession httpSession;
 
     @Value("${file.upload.path.datasource.excel}")
     private  String excel_path;
@@ -94,7 +97,8 @@ public class ExcelSourceController {
                 }
 
                 excel_data.setCreatetime(new Date());
-
+                String userId = httpSession.getAttribute("username").toString();
+                excel_data.setUserId(userId);
                 boolean flag=tDataSourceService.addTDatasource(excel_data);
 
                 if(flag){

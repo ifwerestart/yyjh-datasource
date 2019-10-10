@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qsccc.yyjhservice.dao.datasource.RedisDatabaseMapper" >
+  <resultMap id="BaseResultMap" type="com.qsccc.yyjhservice.domain.datasource.RedisDatabase" >
+    <id column="redis_key" property="key" jdbcType="VARCHAR" />
+    <result column="redis_value" property="value" jdbcType="VARCHAR" />
+
+
+  </resultMap>
+  <sql id="Base_Column_List" >
+    redis_key, redis_value
+  </sql>
+
+  <insert id="addKeyValue" parameterType="com.qsccc.yyjhservice.domain.datasource.RedisDatabase" >
+    insert into ${tableName}
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="redisDatabase.key != null" >
+        redis_key,
+      </if>
+      <if test="redisDatabase.value != null" >
+        redis_value
+      </if>
+
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="redisDatabase.key != null" >
+        #{redisDatabase.key,jdbcType=VARCHAR},
+      </if>
+      <if test="redisDatabase.value != null" >
+        #{redisDatabase.value,jdbcType=VARCHAR}
+      </if>
+
+
+
+    </trim>
+  </insert>
+
+
+    <update id="createTable" parameterType="String">
+    CREATE TABLE ${tableName} (
+      `redis_key` varchar(100) NOT NULL COMMENT 'key',
+      `redis_value` varchar(10000) DEFAULT NULL COMMENT 'value',
+
+      PRIMARY KEY (`redis_key`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=2897 DEFAULT CHARSET=utf8 COMMENT='用户操作日志';
+  </update>
+
+  <select id="existTable" parameterType="String" resultType="Integer">
+    select count(*)
+    from information_schema.TABLES
+    where table_name=#{tableName}
+  </select>
+
+  <update id="dropTable">
+    DROP TABLE IF EXISTS ${tableName}
+  </update>
+
+
+  <update id="updTableName" parameterType="java.util.Map">
+    ALTER TABLE ${pre_tableName} rename to ${tableName}
+</update>
+
+
+</mapper>

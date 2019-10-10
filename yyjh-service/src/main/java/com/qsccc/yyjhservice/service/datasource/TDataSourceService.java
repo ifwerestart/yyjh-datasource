@@ -26,9 +26,11 @@ public interface TDataSourceService {
 
     boolean createAutoTable(String name, List colums);
 
-    boolean addByFilter(String name,List cols);
+    boolean addByFilter(String name, List cols);
 
     List<String> findAllTables(String database_name);
 
     boolean delTable(String table_name);
+
+    boolean findEqualTDatasource(TDataSource record);
 }

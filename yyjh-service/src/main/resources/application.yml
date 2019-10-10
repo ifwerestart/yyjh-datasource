@@ -81,3 +81,5 @@ file:
         csv: /yyjhfiles/datasource/csv
         excel: /yyjhfiles/datasource/excel
         img: /yyjhfiles/datasource/img
+  staticAccessPath: /upload/**
+  uploadFolder: D:\\yyjhfiles\\datasource\\img

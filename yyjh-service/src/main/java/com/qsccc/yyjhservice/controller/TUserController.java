@@ -3,10 +3,13 @@ package com.qsccc.yyjhservice.controller;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qsccc.yyjhservice.domain.user.TUser;
+import com.qsccc.yyjhservice.domain.user.TUserDateFormat;
+import com.qsccc.yyjhservice.service.user.TUserDateFormatService;
 import com.qsccc.yyjhservice.service.user.TUserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +33,9 @@ public class TUserController {
 
     @Autowired
     private HttpSession httpSession;
+
+    @Autowired
+    private TUserDateFormatService tUserDateFormatService;
 
     @RequestMapping("/selectByLoginid")
     public Object selectByLoginid(@RequestParam("json") String json) throws IOException {
@@ -103,6 +109,23 @@ public class TUserController {
 
         return list;
     }
+    @RequestMapping("/setDateFormat")
+    public Object setDateFormat(@RequestParam("json") String json) throws IOException {
+        ObjectMapper om=new ObjectMapper();
+        Map<String,Object> map=om.readValue(json,new TypeReference<Map<String,Object>>(){});
+        String date=map.get("date").toString();
+        //修改
+        TUserDateFormat tUserDateFormat=new TUserDateFormat();
+        tUserDateFormat.setDateformat(date);
+        return tUserDateFormatService.updTUserDateFormat(tUserDateFormat);
+    }
+
+    @RequestMapping("/selDateFormat")
+    public Object selDateFormat(){
+        TUserDateFormat tUserDateFormat=tUserDateFormatService.selTUserDateFormat();
+        System.out.println(tUserDateFormat);
+        return tUserDateFormat;
+    }
 
 
     @RequestMapping("/logout")
@@ -115,29 +138,77 @@ public class TUserController {
         return "error";
     }
 
-    //认证角色
+    //权限
     @RequestMapping("/permissionmanage")
-    @RequiresRoles(value = {"supermanager","operation_manager"}, logical = Logical.OR)
-    public Object permissionanage() {
+    @RequiresPermissions(value = {"oper_role_permission","oper_user_role"}, logical = Logical.OR)
+    public Object permissionManage() {
         Map<String,Object> result=new HashMap<>();
         result.put("code",1);
         return result;
     }
 
     @RequestMapping("/datasmanage")
-    @RequiresRoles(value = {"supermanager","datas_manager"},logical = Logical.OR)
-    public Object datasanage(){
+    @RequiresPermissions(value = {"create","update","select","delete"}, logical = Logical.OR)
+    public Object datasManage() {
         Map<String,Object> result=new HashMap<>();
         result.put("code",1);
         return result;
     }
 
     @RequestMapping("/datemanage")
-    @RequiresRoles(value = {"supermanager","date_manager"},logical = Logical.OR)
-    public Object testSelectShiro(){
+    @RequiresPermissions(value = {"date_oper"}, logical = Logical.OR)
+    public Object dateManage(){
         Map<String,Object> result=new HashMap<>();
         result.put("code",1);
         return result;
     }
+
+    @RequestMapping("/addPermission")
+    @RequiresPermissions(value = {"create"}, logical = Logical.OR)
+    public Object addPermission(){
+        Map<String,Object> result=new HashMap<>();
+        result.put("code",1);
+        return result;
+    }
+
+    @RequestMapping("/updPermission")
+    @RequiresPermissions(value = {"update"}, logical = Logical.OR)
+    public Object updPermission(){
+        Map<String,Object> result=new HashMap<>();
+        result.put("code",1);
+        return result;
+    }
+
+    @RequestMapping("/delPermission")
+    @RequiresPermissions(value = {"delete"}, logical = Logical.OR)
+    public Object delPermission(){
+        Map<String,Object> result=new HashMap<>();
+        result.put("code",1);
+        return result;
+    }
+
+    @RequestMapping("/operUserRole")
+    @RequiresPermissions(value = {"oper_user_role"}, logical = Logical.OR)
+    public Object operUserRole(){
+        Map<String,Object> result=new HashMap<>();
+        result.put("code",1);
+        return result;
+    }
+    @RequestMapping("/operRolePerm")
+    @RequiresPermissions(value = {"oper_role_permission"}, logical = Logical.OR)
+    public Object operRolePerm(){
+        Map<String,Object> result=new HashMap<>();
+        result.put("code",1);
+        return result;
+    }
+
+    @RequestMapping("/operDate")
+    @RequiresPermissions(value = {"date_oper"}, logical = Logical.OR)
+    public Object operDate(){
+        Map<String,Object> result=new HashMap<>();
+        result.put("code",1);
+        return result;
+    }
+
 
 }

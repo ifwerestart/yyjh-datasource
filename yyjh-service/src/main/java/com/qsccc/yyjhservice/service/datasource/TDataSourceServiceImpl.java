@@ -105,4 +105,15 @@ public class TDataSourceServiceImpl implements  TDataSourceService{
             return true;
         return false;
     }
+
+    @Override
+    public boolean findEqualTDatasource(TDataSource record) {
+        TDataSource tDatasource = tDataSourceMapper.findEqualTDatasource(record);
+        if(tDatasource!=null){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 }

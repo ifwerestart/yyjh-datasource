@@ -192,12 +192,12 @@
 				<div class="modal-header">
 					<div class="choosen-label">
 						请填入相关信息
-						<span data-dismiss="modal" aria-hidden="true" class="glyphicon glyphicon-remove-sign" style="float: right;"></span>
+						<span id="registerback" aria-hidden="true" class="glyphicon glyphicon-remove-sign" style="float: right;"></span>
 					</div>
 				</div>
 				<div class="modal-body">
 					<label class="input-label">登录账户:</label>
-					<input type="text" id="loginId" class="form-inline" style="float: left;" placeholder="7-20位以字母开头 "/>
+					<input type="text" id="loginId" class="form-inline" style="float: left;" placeholder="4-20位以字母开头 "/>
 					<span class="prompt_msg" id="prompt_msg_loginId"></span>
 					<br /><br />
 					<label class="input-label">密码:</label>
@@ -239,7 +239,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button id="submit" onclick="check_msg()">注册</button>
+					<button onclick="check_msg()">注册</button>
 				</div>
 			</div>
 		</div>

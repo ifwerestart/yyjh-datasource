@@ -52,7 +52,10 @@ public class UserController {
         TUser tUser = new TUser();
         tUser.setLoginid(loginId);
         tUser.setPassword(password);
-        tUser.setNickname(nickname);
+        if(!nickname.equals("无")){
+            tUser.setNickname(nickname);
+        }
+
 
         userimg = org.apache.commons.lang.StringEscapeUtils.escapeJava(userimg);
         System.out.println(userimg);
@@ -61,7 +64,10 @@ public class UserController {
         tUser.setEmail(email);
         tUser.setTel(tel);
         tUser.setCreateTime(date);
-        tUser.setRemark(remark);
+        if(!remark.equals("无")){
+            tUser.setRemark(remark);
+        }
+
 
         tUser.setState("1");
 

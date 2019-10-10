@@ -277,4 +277,12 @@
     drop table ${table_name}
   </delete>
 
+  <select id="findEqualTDatasource" resultMap="BaseResultMap" parameterType="com.qsccc.yyjhservice.domain.datasource.TDataSource" >
+    select
+    <include refid="Base_Column_List" />
+    from t_datasource
+    where port = #{port,jdbcType=INTEGER} and url = #{url,jdbcType=VARCHAR}
+    and username = #{username,jdbcType=VARCHAR}
+  </select>
+
 </mapper>

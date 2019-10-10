@@ -123,7 +123,7 @@ $("#loginId").blur(function () {
             contentType:"application/json;charset=utf-8",
             async:false,
             success:function(data){
-                var reg = /^[a-zA-Z]([-_a-zA-Z0-9]{6,20})$/;
+                var reg = /^[a-zA-Z]([-_a-zA-Z0-9]{3,20})$/;
                 if(data!=null&&data!=""){
                     $("#prompt_msg_loginId").empty()
                     $("#prompt_msg_loginId").append(img_error);
@@ -322,6 +322,7 @@ function check_msg() {
                     $("#img_choose").css("display","block")
                     $("#img").css("display","none")
                     $("#img_preview").empty()
+                    $(".dowebok").css("display","block");
                 }else{
                     alert("未知原因注册失败，请稍后重试")
                     $("#showDrivers_choosen").modal("show")

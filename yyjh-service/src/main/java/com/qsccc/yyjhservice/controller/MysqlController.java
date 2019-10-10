@@ -12,6 +12,7 @@ import com.sun.corba.se.spi.ior.ObjectKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.sql.*;
 import java.util.*;
 import java.util.Date;
@@ -23,6 +24,8 @@ import static com.qsccc.tools.MysqlOper.copyDataFromOneTable2AnotherWithSelectAn
 public class MysqlController {
     @Autowired
     private TDataSourceService tDataSourceService;
+    @Autowired
+    private HttpSession httpSession;
 
 
     //根据配置连接数据库，如果数据库没有上传就上传，不然不能上传
@@ -51,6 +54,8 @@ public class MysqlController {
         mysql_data.setPort(Integer.parseInt(port));
         mysql_data.setUsername(user);
         mysql_data.setPassword(password);
+        String userId = httpSession.getAttribute("username").toString();
+        mysql_data.setUserId(userId);
 
         try {
             // 加载驱动程序
@@ -257,7 +262,7 @@ public class MysqlController {
         int id=Integer.parseInt(id1);
 
         String url = "jdbc:mysql://"+host+":"+port+"/"+database_name+"?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true";
-
+        String userId = httpSession.getAttribute("username").toString();
         Connection conn=MysqlOper.getConnection(url,user,password);
         if(conn!=null){
             TDataSource mysql_data=new TDataSource();
@@ -268,6 +273,7 @@ public class MysqlController {
             mysql_data.setUsername(user);
             mysql_data.setPassword(password);
             mysql_data.setId(id);
+            mysql_data.setUserId(userId);
 
             //连接成功之后把数据上传到数据库的表里
             //如果表里已经存在url、port、database-name就不能上传
@@ -287,7 +293,7 @@ public class MysqlController {
             }
 
             boolean flag=tDataSourceService.updTDatasurceById(mysql_data);
-
+            System.out.println(flag);
             result.setCode(DataSourceEnum.SUCCESS.getCode());
             result.setMsg(DataSourceEnum.SUCCESS.getMsg());
 

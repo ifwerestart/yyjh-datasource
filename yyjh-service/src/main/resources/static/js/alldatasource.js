@@ -9,8 +9,14 @@ var sidePagination_change = 'server'
 var method_change = "get"
 var queryParames_change = queryParamsByBegin
 
+//修改
+var globle_selected_id = new Array()
+
 var flag = true;
 var global_id;
+
+var table_data;
+
 $("#screen").click(function () {
 
     $("#view_allDatasource").bootstrapTable("destroy")
@@ -28,8 +34,11 @@ $("#abandon_screen").click(function () {
     $("#search_select").val("default")
     $("#search_input").val("")
 
-    $("#view_allDatasource").css("display","block");
     $("#view_screenDatasource").bootstrapTable("destroy")
+//    $("#view_screenDatasource").css("display","none");
+
+    $("#view_allDatasource").css("display","block");
+
 
     elementID = '#view_allDatasource'
     url_change = '/datasuorce/getAllByBeginNumber'
@@ -65,13 +74,19 @@ function initTable(page){
             checkbox: true,
             visible:true,
             class:'check',
-            formatter: function (value, row, index) {
-                if (value) {
-                    return value;
-                } else {
-                    return row.id
+            //修改
+            formatter: function(value, row, index) {
+                for(i = 0;i<globle_selected_id.length;i++){
+                    if(row.id == globle_selected_id[i]){
+                        return {
+                            disabled : false,//设置是否可用
+                            checked : true//设置选中
+                        };
+                    }
                 }
+                return value;
             }
+
         } ,{
             field: 'id',
             title: "id",
@@ -186,100 +201,184 @@ function initTable(page){
             events: {               // 编辑按钮组事件
                 'click #upd_btn': function (event, value, row, index) {
                 //    alert(11111)
-                    if("csv" == row.type ){
-                        //csv 修改
-                        //row.id
-                        global_id=row.id;
 
-                    }else if("mysql" == row.type){
-                        //mysql 修改
-                        global_id=row.id;
+                    $.ajax({
+                        type:"GET",
+                        url:"/TUser/updPermission",
+                        contentType:"application/json;charset=utf-8",
+                        async:false,
+                        success:function(result){
+                            if(result.code==1){
+                                if("csv" == row.type ){
+                                    //csv 修改
+                                    //row.id
+                                    global_id=row.id;
 
-                        $("#mysql-config1").modal("show");
+                                    $("#csv_update_import").modal("show")
 
-                        $.ajax({
-                            type:"GET",
-                            url:"/mysql/mysqlFind/"+global_id,
-                            contentType:"application/json;charset=utf-8",
-                            dataType:"json",
-                            async:false,
-                            success:function(result){
-                                $("#username1").val(result.username);
-                                $("#port1").val(result.port);
-                                $("#database-name1").val(result.database_name);
-                                $("#host1").val(result.ip);
-                                $("#password1").val(result.password);
 
+
+                                }else if("mysql" == row.type){
+                                    //mysql 修改
+                                    global_id=row.id;
+
+                                    $("#mysql-config1").modal("show");
+
+                                    $.ajax({
+                                        type:"GET",
+                                        url:"/mysql/mysqlFind/"+global_id,
+                                        contentType:"application/json;charset=utf-8",
+                                        dataType:"json",
+                                        async:false,
+                                        success:function(result){
+                                            $("#username1").val(result.username);
+                                            $("#port1").val(result.port);
+                                            $("#database-name1").val(result.database_name);
+                                            $("#host1").val(result.ip);
+                                            $("#password1").val(result.password);
+
+                                        }
+                                    });//ajax
+
+
+                                }else if("redis" == row.type){
+                                    //redis 修改
+                                    //row.id
+                                    global_id=row.id;
+                                    flag= editRedisRow(index,row.id,flag)
+
+
+
+                                }else if("excel" == row.type){
+                                    //excel 修改
+                                    //row.id
+                                    global_id=row.id;
+                                    $("#excel_import1").modal("show");
+                                    json_id["id"]=global_id;
+                                    //excel上传修改操作
+                                    excel_load1("#excel_upload1");
+
+                                }
                             }
-                        });//ajax
-
-
-                    }else if("redis" == row.type){
-                        //redis 修改
-                        //row.id
-                        global_id=row.id;
-                        flag= editRedisRow(index,row.id,flag)
+                        },
+                        error:function () {
+                            alert("该账户不具有修改数据的权限！");
+                        }
+                    });
 
 
 
-                    }else if("excel" == row.type){
-                        //excel 修改
-                        //row.id
-                        global_id=row.id;
-                        $("#excel_import1").modal("show");
-                        json_id["id"]=global_id;
-                        //excel上传修改操作
-                        excel_load1("#excel_upload1");
-
-                    }
                 },
                 'click #add_btn': function (event, value, row, index) {
-                    if("csv" == row.type ){
-                        //csv 入库
-                        global_id=row.id;
+                    $.ajax({
+                        type:"GET",
+                        url:"/TUser/addPermission",
+                        contentType:"application/json;charset=utf-8",
+                        async:false,
+                        success:function(result){
+                            if(result.code==1){
+                                if("csv" == row.type ){
+                                    //csv 入库
+                                    global_id=row.id;
+                                    csv_insertdata_submit();
+
+                                }else if("mysql" == row.type){
+                                    //mysql 入库
+                                    global_id=row.id;
+
+                                    $("#mysql_oper").modal("show");
+                                    mysqlFindTables();
+
+                                }else if("redis" == row.type){
+                                    //redis 入库
+                                    global_id=row.id;
+                                    $("#redis_database").modal("show")
+                                    //用表格显示redis非空库号
+                                    get_redisbase_table()
 
 
-                    }else if("mysql" == row.type){
-                        //mysql 入库
-                        global_id=row.id;
+                                }else if("excel" == row.type){
+                                    //excel 入库
+                                    global_id=row.id;
+                                    excel_enter();
+                                }
+                            }
+                        },
+                        error:function () {
+                            alert("该账户不具有入库的权限！");
+                        }
+                    });
 
-                        $("#mysql_oper").modal("show");
-                        mysqlFindTables();
-
-                    }else if("redis" == row.type){
-                        //redis 入库
-                        global_id=row.id;
-
-
-                    }else if("excel" == row.type){
-                        //excel 入库
-                        global_id=row.id;
-                        excel_enter();
-                    }
 
                 },
                 'click #del_btn': function (event, value, row, index) {
                     $.ajax({
-                        type:"POST",
-                        url:"/datasuorce/delTDatasourceById/"+row.id,
+                        type:"GET",
+                        url:"/TUser/delPermission",
                         contentType:"application/json;charset=utf-8",
                         async:false,
-                        success:function(data){
-                            if(data){
-                                initTable($(elementID).bootstrapTable('getOptions').pageNumber)
-                              //  $(elementID).bootstrapTable("refresh")
-                            }else{
-                                alert("删除失败")
-                            }
+                        success:function(result){
+                            if(result.code==1){
+                                $.ajax({
+                                    type:"POST",
+                                    url:"/datasuorce/delTDatasourceById/"+row.id,
+                                    contentType:"application/json;charset=utf-8",
+                                    async:false,
+                                    success:function(data){
+                                        if(data){
+                                            initTable($(elementID).bootstrapTable('getOptions').pageNumber)
+                                            //  $(elementID).bootstrapTable("refresh")
+                                        }else{
+                                            alert("删除失败")
+                                        }
 
+                                    }
+                                });
+                            }
+                        },
+                        error:function () {
+                            alert("该账户不具有删除数据的权限！");
                         }
                     });
+
                 }
             },
 
-        }]
+        }],
+        //修改
+        onCheck: function(row){
+            globle_selected_id.push(row.id)
+            //   console.log("增加"+globle_selected_id)
+        },
+        onUncheck: function (row) {
+            var index = globle_selected_id.indexOf(row.id)
+            //   console.log("index:"+index)
+            globle_selected_id.splice(index,1)
+            //  console.log("删除"+globle_selected_id)
+        },
+        onCheckAll: function (rows) {
+            for(i=0;i<rows.length;i++){
+                globle_selected_id.push(rows[i].id)
+            }
+        },
+        onUncheckAll: function (rows) {
+            for(i=0;i<rows.length;i++){
+                let index = globle_selected_id.indexOf(rows[i].id)
+                globle_selected_id.splice(index, 1)
+            }
 
-	    });
+        },
+        onLoadSuccess: function (data) {
+            // console.log(data.length!=0)
+            table_data = $(elementID).bootstrapTable('getData')
+            if ((table_data == '' || table_data == null )&& data.length!=0) {
+                initTable($(elementID).bootstrapTable('getOptions').pageNumber-1)
+            }
+        }
+
+
+
+    });
 // 隐藏主键显示
     $(elementID).bootstrapTable('hideColumn', 'innerId');
    }
@@ -320,9 +419,11 @@ let editFormatter = `
 
 
 
+var datasource;
+var code
 //开启编辑
 function editRedisRow(index,id,ff) {
-   // console.log("进入edit方法时："+flag)
+    // console.log("进入edit方法时："+flag)
     if(ff){
         flag = false
         var url_value = $(elementID).bootstrapTable('getRowByUniqueId', id).url;
@@ -369,7 +470,7 @@ function editRedisRow(index,id,ff) {
 
 
         $("#save").click(function () {
-          //  alert(111)
+            //  alert(111)
             url_input = $("#url_input"+id).val()
             port_input = $("#port_input"+id).val()
             username_input = $("#username_input"+id).val()
@@ -377,7 +478,7 @@ function editRedisRow(index,id,ff) {
 
             flag = true
 
-            var datasource;
+
             if(password_input == "****************"){
                 datasource = {
                     id:id,
@@ -395,59 +496,95 @@ function editRedisRow(index,id,ff) {
                 }
             }
 
+            redis_updatedata()
+
+            if(code==0){
+                $(elementID).bootstrapTable('updateCell', {
+                    index: index,
+                    field: "url", // 字段名称
+                    value:url_input // 新的值
+                });
+
+                $(elementID).bootstrapTable('updateCell', {
+                    index: index,
+                    field: "port", // 字段名称
+                    value:port_input  // 新的值
+                });
+
+                $(elementID).bootstrapTable('updateCell', {
+                    index: index,
+                    field: "username", // 字段名称
+                    value: username_input  // 新的值
+                });
+
+                $(elementID).bootstrapTable('updateCell', {
+                    index: index,
+                    field: "password", // 字段名称
+                    value: "****************"  // 新的值
+                });
+
+                $(elementID).bootstrapTable('updateCell', {
+                    index: index,
+                    field: "handle", // 字段名称
+                    value: formerbutton  // 新的值
+                });
 
 
-            $(elementID).bootstrapTable('updateCell', {
-                index: index,
-                field: "url", // 字段名称
-                value:url_input // 新的值
-            });
-
-            $(elementID).bootstrapTable('updateCell', {
-                index: index,
-                field: "port", // 字段名称
-                value:port_input  // 新的值
-            });
-
-            $(elementID).bootstrapTable('updateCell', {
-                index: index,
-                field: "username", // 字段名称
-                value: username_input  // 新的值
-            });
-
-            $(elementID).bootstrapTable('updateCell', {
-                index: index,
-                field: "password", // 字段名称
-                value: "****************"  // 新的值
-            });
-
-            $(elementID).bootstrapTable('updateCell', {
-                index: index,
-                field: "handle", // 字段名称
-                value: formerbutton  // 新的值
-            });
-
-
-            $.ajax({
-                type:"POST",
-                url:"/datasuorce/updTDatasurceById",
-                data:JSON.stringify(datasource),
-                contentType:"application/json;charset=utf-8",
-                async: false,
-                dataType: 'json',
-                success:function(data){
-                    if(data){
-                        //    alert("修改成功")
-                        initTable($(elementID).bootstrapTable('getOptions').pageNumber)
-                        if($(elementID).bootstrapTable('getData') == '' || $(elementID).bootstrapTable('getData') == null){
-                            $(elementID).bootstrapTable('prevPage')
+                $.ajax({
+                    type:"POST",
+                    url:"/datasuorce/updTDatasurceById",
+                    data:JSON.stringify(datasource),
+                    contentType:"application/json;charset=utf-8",
+                    async: false,
+                    dataType: 'json',
+                    success:function(data){
+                        if(data){
+                            //    alert("修改成功")
+                            initTable($(elementID).bootstrapTable('getOptions').pageNumber)
+                            if($(elementID).bootstrapTable('getData') == '' || $(elementID).bootstrapTable('getData') == null){
+                                $(elementID).bootstrapTable('prevPage')
+                            }
+                        }else {
+                            alert("修改失败")
                         }
-                    }else {
-                        alert("修改失败")
+                        //   console.log(data)
                     }
-                    //   console.log(data)
-                }
-            });
+                });
+            }else{
+                $(elementID).bootstrapTable('updateCell', {
+                    index: index,
+                    field: "url", // 字段名称
+                    value:url_value // 新的值
+                });
+
+                $(elementID).bootstrapTable('updateCell', {
+                    index: index,
+                    field: "port", // 字段名称
+                    value:port_value  // 新的值
+                });
+
+                $(elementID).bootstrapTable('updateCell', {
+                    index: index,
+                    field: "username", // 字段名称
+                    value: username_value  // 新的值
+                });
+
+                $(elementID).bootstrapTable('updateCell', {
+                    index: index,
+                    field: "password", // 字段名称
+                    value: "****************"  // 新的值
+                });
+
+                $(elementID).bootstrapTable('updateCell', {
+                    index: index,
+                    field: "handle", // 字段名称
+                    value: formerbutton  // 新的值
+                });
+            }
+
+
+
+
         })
 
         $("#abandon").click(function () {
@@ -486,43 +623,58 @@ function editRedisRow(index,id,ff) {
 
 
     }
-return flag;
+    return flag;
 
 }
 
-
-
 $("#batch_del").click(function () {
-    var get = $(elementID).bootstrapTable('getSelections')
-    var strIds=new Array();
-    if (get.length > 0) {
-        for (i = 0 ; i < get.length; i++) {
-            strIds.push(get[i].id)
-
-            $.ajax({
-                type:"POST",
-                url:"/datasuorce/batchDelById",
-                data: JSON.stringify(strIds),
-                traditional: true,  //解决传递数组的问题
-                async: false,
-                dataType: 'json',
-                contentType:"application/json;charset=utf-8",
-                success:function(data){
-                    if(data){
-                        initTable($(elementID).bootstrapTable('getOptions').pageNumber)
-                        if($(elementID).bootstrapTable('getData') == '' || $(elementID).bootstrapTable('getData') == null){
-                            $(elementID).bootstrapTable('prevPage')
+    //修改
+    $.ajax({
+        type:"GET",
+        url:"/TUser/delPermission",
+        contentType:"application/json;charset=utf-8",
+        async:false,
+        success:function(result){
+            if(result.code==1){
+                if (globle_selected_id.length > 0) {
+                    $.ajax({
+                        type:"POST",
+                        url:"/datasuorce/batchDelById",
+                        data: JSON.stringify(globle_selected_id),
+                        traditional: true,  //解决传递数组的问题
+                        async: false,
+                        dataType: 'json',
+                        contentType:"application/json;charset=utf-8",
+                        success:function(data){
+                            if (data) {
+                                initTable($(elementID).bootstrapTable('getOptions').pageNumber)
+                                globle_selected_id.length = 0
+                            }else{
+                                alert("删除失败，请稍后重试")
+                            }
                         }
-                    }else{
-                        alert("删除失败，请稍后重试")
-                    }
+                    });
                 }
-            });
+                else {
+                    alert("请至少选择一个数据源");
+                }
+            }
+        },
+        error:function () {
+            alert("该账户不具有批量删除的权限！");
         }
-    }
-    else {
-        alert("请至少选择一个数据源");
-    }
+    });
+
+
+})
+
+$("#datasource_back").click(function () {
+
+    initTable($(elementID).bootstrapTable('getOptions').pageNumber)
+ //   $(elementID).bootstrapTable('selectPage',parseInt($(elementID).bootstrapTable().totalPages))
+   // initTable( $(elementID).bootstrapTable('selectPage',parseInt($(elementID).bootstrapTable().totalPages)))
+  //  $(elementID).bootstrapTable('selectPage',parseInt($(elementID).bootstrapTable().totalPages))
+
 
 })
 

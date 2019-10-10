@@ -155,7 +155,7 @@
 	<div style="display: inline-block;width: 1200px;overflow: scroll;margin-left: 20px">
 		<div >
 			<div>
-				<div class="choose-label">全部数据源
+				<div class="choose-label">
 					<button class = 'btn btn-danger' id='batch_del' style="float: left">批量删除</button>
 					<button class = 'btn btn-success' id='add-btn' style="float: left">增加数据源</button>
 				</div>
@@ -239,7 +239,8 @@
 					</div>
 					<div>
 						<label>设置用户和角色&nbsp;&nbsp;</label><input name="permissions" type="checkbox" value="oper_user_role" />&nbsp;&nbsp;&nbsp;
-						<label>设置角色和权限&nbsp;&nbsp;</label><input name="permissions" type="checkbox" value="oper_role_permission" />&nbsp;&nbsp;&nbsp;
+						<label>设置角色和权限&nbsp;&nbsp;</label><input name="permissions" type="checkbox" value="oper_role_permission" />&nbsp;&nbsp;&nbsp;<br>
+						<label>设置日期格式&nbsp;&nbsp;</label><input name="permissions" type="checkbox" value="date_oper" />&nbsp;&nbsp;&nbsp;
 					</div>
 				</div>
 
@@ -256,15 +257,15 @@
 		<h4>日期格式配置：</h4>
 		<br/>
 		<div style="margin-left: 5%">
-			<input type="radio" name="date" value="ymd hms"/>年月日 时分秒
+			<input type="radio" name="date" value="yyyyMMdd hhmmss"/>年月日 时分秒
 			<br><br>
-			<input type="radio" name="date" value="m/d/y h:m:s"/>月/日/年 时：分：秒
+			<input type="radio" name="date" value="MM/dd/yyyy hh:mm:ss"/>月/日/年 时：分：秒
 			<br><br>
-			<input type="radio" name="date" value="ymd"/>年月日
+			<input type="radio" name="date" value="yyyyMMdd"/>年月日
 			<br><br>
-			<input type="radio" name="date" value="m/d/y"/>月/日/年
+			<input type="radio" name="date" value="MM/dd/yyyy"/>月/日/年
 			<br><br>
-			<input type="radio" name="date" value="h:m:s"/>时：分：秒
+			<input type="radio" name="date" value="hh:mm:ss"/>时：分：秒
 		</div>
 		<br>
 		<br>
@@ -288,9 +289,8 @@
 			<span id="nickname"></span>
 			<br />
 			<label>头像：</label>
-			<div id="userimg">
-
-			</div>
+			<span id="userimg">
+			</span>
 			<br />
 			<label>邮箱：</label>
 			<span id="email"></span>
@@ -324,7 +324,7 @@
 				<div class="modal-content modal-content-color">
 					<div class="modal-header">
 						<div class="choose-label">请选择数据源
-							<span data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+							<span id="datasource_back" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
 
 						</div>
 					</div>
@@ -937,6 +937,191 @@
 
 
 
+<!--Redis数据源导入模态框 -->
+<div>
+	<div id="redis_import" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content modal-content-color">
+					<div class="modal-header">
+						<div class="choosen-label">数据源导入
+							<span data-dismiss="modal" aria-hidden="true" id="redis-close" class="close glyphicon glyphicon-remove-circle"></span>
+						</div>
+					</div>
+					<div class="modal-body">
+
+						<div class="row">
+							<div class="col-lg-1"></div>
+							<div class="col-lg-10">
+								<div class="table-bordered" class="input_data">
+									<div>
+										<label>用户名:&nbsp;&nbsp;</label>
+										<input type="text" id="redis_username" class="form-inline" />
+									</div>
+									</br>
+									<div>
+										<label>IP地址:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+										<input type="text" id="redis_url" class="form-inline" />
+									</div>
+									</br>
+									<div>
+										<label>端口号:&nbsp;&nbsp;</label>
+										<input type="text" id="redis_port" class="form-inline" />
+									</div>
+									</br>
+									<div>
+										<label>密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+										<input type="password" id="redis_password" class="form-inline" />
+									</div>
+
+								</div>
+							</div>
+							<div class="col-lg-1"></div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div>
+							<button id="r_test" class="btn btn-success">连接测试</button>
+							<button id="r_submit" class="btn btn-success">上传数据源</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Redis入库显示库表模态框 -->
+<div>
+	<div id="redis_database" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content modal-content-color">
+					<div class="modal-header">
+						<div class="choosen-label">数据导入
+							<span data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+						</div>
+					</div>
+					<div class="modal-body">
+
+						<div class="row">
+							<div class="col-lg-1"></div>
+							<div class="col-lg-10">
+								<div class="table-bordered">
+									<table id="redis_selectdatabase_table" class="table table-hover">
+
+									</table>
+
+								</div>
+							</div>
+							<div class="col-lg-1"></div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div>
+							<button id="redis_insertdata_submit" class="btn btn-success">执行入库</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--CSV修改上传文件导入模态框 -->
+<div>
+	<div id="csv_update_import" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content modal-content-color">
+					<div class="modal-header">
+
+						<div class="choosen-label">更新文件导入
+							<span id="csv_upload_back"  data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-lg-1"></div>
+							<div class="col-lg-10">
+								<button class="btn btn-success csv-add-btn" onclick="document.getElementById('csv_update').click()">上传文件</button>
+							</div>
+							<div class="col-lg-1"></div>
+						</div>
+						<div class="row">
+							<div class="col-lg-1"></div>
+							<div class="col-lg-10">
+								<div class="row files csv-files">
+									<table class="table table-hover" >
+										<caption>文件信息</caption>
+										<thead>
+										<tr>
+											<th>文件名称</th>
+											<th>图片格式</th>
+											<th>文件大小</th>
+										</tr>
+										</thead>
+										<tbody id="csv_update_datas">
+										<!--生成上传文件信息-->
+
+										</tbody>
+
+									</table>
+
+									<div>
+										<!--这里的name很重要，和后端要对应-->
+										<input type="file" name="csv_upload" id="csv_update">
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-1"></div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div>
+							<button id="c_update_preview" class="btn btn-info">预览</button>
+							<button id="c_update_submit" class="btn btn-success">确定修改</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--CSV修改时的预览模态框 -->
+<div>
+	<div id="csv_update_preview" class="modal fade bs-modal-lg" data-backdrop="static">
+		<div>
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content modal-content-color">
+					<div class="modal-header">
+
+						<div class="choosen-label">更新文件预览
+							<span id="csv_updatepreview_close" data-dismiss="modal" aria-hidden="true" class="close glyphicon glyphicon-remove-circle"></span>
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="table-responsive">
+							<table id="csv_update_table" class="table table-hover">
+
+							</table>
+						</div>
+					</div>
+					<div class="modal-footer">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
 </body>
 <script src="../../js/jquery-2.1.1.min.js"></script>
 <script src="../../bootstrap/js/bootstrap-select.js"></script>
@@ -953,5 +1138,9 @@
 <script src="../../js/setPermission.js"></script>
 <!--cjj-->
 <script src="../../js/alldatasource.js"></script>
+
+<!--cr-->
+<script src="../../js/redis.js"></script>
+<script src="../../js/csv.js"></script>
 
 </html>

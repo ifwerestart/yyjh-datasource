@@ -1,9 +1,36 @@
 
 var dateformat="";
 $(document).ready(function(){
+
+    $.ajax({
+        type: "GET",
+        url: "/TUser/selDateFormat",
+        contentType: "application/json;charset=utf-8",
+        async: false,
+        success: function (result) {
+            dateformat=result.dateformat;
+            console.log(dateformat)
+        }
+    });
+
+    showInfo();
+
     $("#add-btn").click(function () {
-       // alert(1111111111)
-        $("#showDrivers_choosen").modal("show")
+        $.ajax({
+            type:"GET",
+            url:"/TUser/addPermission",
+            contentType:"application/json;charset=utf-8",
+            async:false,
+            success:function(result){
+                if(result.code==1){
+                    $("#showDrivers_choosen").modal("show");
+                }
+            },
+            error:function () {
+                alert("该账户不具有添加数据源的权限！");
+            }
+        });
+
     })
 
     //选择数据源按钮弹窗
@@ -113,94 +140,36 @@ $(document).ready(function(){
     
     $("#setdate").click(function () {
         var date=$("input[name='date']:checked").val();
-        if(date=="ymd hms"){
-            dateformat="yyyyMMdd hhmmss";
-        }else if (date=="m/d/y h:m:s"){
-            dateformat="MM/dd/yyyy hh:mm:ss";
-        }else if(date=="ymd"){
-            dateformat="yyyyMMdd";
-        }else if (date=="m/d/y"){
-            dateformat="MM/dd/yyyy";
-        }else if(date=="h:m:s"){
-            dateformat="hh:mm:ss";
+        var data={
+            "date":date
         }
-        alert("日期格式配置成功！")
+        $.ajax({
+            type: "GET",
+            url: "/TUser/setDateFormat",
+            data:{"json":JSON.stringify(data)},
+            dataType:"json",
+            contentType: "application/json;charset=utf-8",
+            async: false,
+            success: function () {
+                alert("日期格式配置成功！")
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: "/TUser/selDateFormat",
+            contentType: "application/json;charset=utf-8",
+            async: false,
+            success: function (result) {
+                dateformat=result.dateformat;
+                console.log(dateformat)
+            }
+        });
+
     })
 
 
     $("#infomanage").click(function () {
-        $("#datasmanage").css("color", "");
-        $("#permissionmanage").css("color", "");
-        $("#datemanage").css("color", "");
-        $("#infomanage").css("color", "#5CB85C");
-
-        $("#datascontent").css("display", "none");
-        $("#permissioncontent").css("display", "none");
-        $("#datecontent").css("display", "none");
-        $("#infocontent").css("display", "block");
-
-        $.ajax({
-            type:"GET",
-            url:"/TUser/userinfo",
-            contentType:"application/json;charset=utf-8",
-            async:false,
-            success:function(result){
-                console.log(result);
-                if(result.loginid==null){
-                    $("#loginid").html("");
-                }else {
-                    $("#loginid").html(result.loginid);
-                }
-                if(result.password==null){
-                    $("#ppwd").html("");
-                }else {
-                    $("#ppwd").html(result.password);
-                }
-                if(result.nickname==null){
-                    $("#nickname").html("");
-                }else {
-                    $("#nickname").html(result.nickname);
-                }
-                if(result.userimg==null){
-                    $("#userimg").html("");
-                }else {
-                        uploadImg($('#userimg'), imgBox);
-                }
-                if(result.remark==null){
-                    $("#remark").html("");
-                }else {
-                    $("#remark").html(result.remark);
-                }
-
-                if(result.email==null){
-                    $("#email").html("");
-                }else {
-                    $("#email").html(result.email);
-                }
-                if(result.tel==null){
-                    $("#tel").html("");
-                }else {
-                    $("#tel").html(result.tel);
-                }
-                if(result.createTime==null){
-                    $("#create_time").html("");
-                }else {
-                    var cretime=dateFormat(result.createTime,dateformat);
-                    $("#create_time").html(cretime);
-                }
-                if(result.updateTime==null){
-                    $("#update_time").html("");
-                }else {
-                    var updtime=dateFormat(result.updateTime,dateformat);
-                    $("#update_time").html(updtime);
-                }
-                if(result.state==null){
-                    $("#state").html("");
-                }else {
-                    $("#state").html(result.state);
-                }
-            }
-        });
+        showInfo();
     })
 
     //cp
@@ -231,6 +200,7 @@ $(document).ready(function(){
     $("#w_submit").click(function () {
         csv_url("#csv_upload","/csv/csvUpload");
         csv_datas.submit();
+
     });
 
     //csv全部预览
@@ -281,24 +251,6 @@ var excel_datas=[];
 var excel_index=-1;
 var excel_interpret=[];
 
-//cp
-
-function uploadImg(element, tag) {
-    var file = tag.files[0];
-
-    var imgSrc;
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function() {
-        imgSrc = this.result;
-        var imgs = document.createElement("img");
-        imgs.style.width = '70px';
-        imgs.style.height = '70px';
-        imgs.style.borderRadius = '50%'
-        $(imgs).attr("src", imgSrc);
-        element.append(imgs);
-    };
-}
 
 Date.prototype.format = function(fmt) {
     var o = {
@@ -938,4 +890,80 @@ function judgeFilter(obj){
         document.getElementById(id).setAttribute("disabled", true);
     }
 
+}
+
+function showInfo() {
+    $("#datasmanage").css("color", "");
+    $("#permissionmanage").css("color", "");
+    $("#datemanage").css("color", "");
+    $("#infomanage").css("color", "#5CB85C");
+
+    $("#datascontent").css("display", "none");
+    $("#permissioncontent").css("display", "none");
+    $("#datecontent").css("display", "none");
+    $("#infocontent").css("display", "block");
+
+    $.ajax({
+        type:"GET",
+        url:"/TUser/userinfo",
+        contentType:"application/json;charset=utf-8",
+        async:false,
+        success:function(result){
+            console.log(result);
+            if(result.loginid==null){
+                $("#loginid").html("");
+            }else {
+                $("#loginid").html(result.loginid);
+            }
+            if(result.password==null){
+                $("#ppwd").html("");
+            }else {
+                $("#ppwd").html(result.password);
+            }
+            if(result.nickname==null){
+                $("#nickname").html("");
+            }else {
+                $("#nickname").html(result.nickname);
+            }
+            if(result.userimg==null){
+                $("#userimg").html("");
+            }else {
+                var imgupload="<img alt='image' style='height:50px;width:50px;' src='/upload/"+result.userimg+"'/>";
+                $("#userimg").html(imgupload);
+            }
+            if(result.remark==null){
+                $("#remark").html("");
+            }else {
+                $("#remark").html(result.remark);
+            }
+
+            if(result.email==null){
+                $("#email").html("");
+            }else {
+                $("#email").html(result.email);
+            }
+            if(result.tel==null){
+                $("#tel").html("");
+            }else {
+                $("#tel").html(result.tel);
+            }
+            if(result.createTime==null){
+                $("#create_time").html("");
+            }else {
+                var cretime=dateFormat(result.createTime,dateformat);
+                $("#create_time").html(cretime);
+            }
+            if(result.updateTime==null){
+                $("#update_time").html("");
+            }else {
+                var updtime=dateFormat(result.updateTime,dateformat);
+                $("#update_time").html(updtime);
+            }
+            if(result.state==null){
+                $("#state").html("");
+            }else {
+                $("#state").html(result.state);
+            }
+        }
+    });
 }
